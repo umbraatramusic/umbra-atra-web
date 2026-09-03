@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Umbra Atra | Álbumes</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #090909;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("photo_2026-07-21_09-00-03.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(8px);
+      transform: scale(1.05);
+      opacity: 0.22;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: -1;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 9, 9, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+      padding: 20px 30px;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo-menu {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #ffffff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 22px;
+    }
+
+    nav ul li a {
+      color: #d0d0d0;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #b30000;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 30px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .page-title h1 {
+      font-size: 3.5rem;
+      letter-spacing: 8px;
+      margin-bottom: 20px;
+    }
+
+    .page-title p {
+      max-width: 760px;
+      margin: auto;
+      color: #c7c7c7;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .albums-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .album-card {
+      border: 1px solid #333;
+      background: rgba(12, 12, 12, 0.78);
+      padding: 35px;
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+    }
+
+    .album-card:hover {
+      border-color: #b30000;
+      transform: translateY(-5px);
+    }
+
+    .album-status {
+      color: #b30000;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .album-card h2 {
+      font-size: 2rem;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .album-year {
+      color: #a9a9a9;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+    }
+
+    .album-card p {
+      color: #c9c9c9;
+      line-height: 1.8;
+      flex-grow: 1;
+    }
+
+    .album-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 20px;
+      text-align: center;
+      border: 1px solid #b30000;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .album-button:hover {
+      background: #b30000;
+    }
+
+    .coming-soon {
+      opacity: 0.88;
+    }
+
+    .coming-soon .album-button {
+      border-color: #555;
+      color: #999;
+      cursor: default;
+    }
+
+    .coming-soon .album-button:hover {
+      background: transparent;
+    }
+
+    .back-container {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 15px 35px;
+      border: 1px solid #b30000;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    .back-button:hover {
+      background: #b30000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #777;
+      border-top: 1px solid #222;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    @media (max-width: 950px) {
+      .albums-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .album-card {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .page-title h1 {
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+      }
+
+      main {
+        padding: 60px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo-menu">UMBRA ATRA</a>
+
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="musica.html">MÚSICA</a></li>
+        <li><a href="albumes.html">ÁLBUMES</a></li>
+        <li><a href="significados.html">SIGNIFICADOS</a></li>
+        <li><a href="letras.html">LETRAS</a></li>
+        <li><a href="historia.html">HISTORIA</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-title">
+      <h1>ÁLBUMES</h1>
+
+      <p>
+        Cada álbum representa un capítulo diferente dentro del universo
+        musical de Umbra Atra. Historias, emociones y mundos que se
+        desarrollan a través de la música sinfónica, gótica y metal.
+      </p>
+    </section>
+
+    <section class="albums-grid">
+
+      <!-- ÁLBUM 1 -->
+      <article class="album-card">
+        <div class="album-status">DISPONIBLE</div>
+
+        <h2>DÉJAME CAER</h2>
+
+        <div class="album-year">Primer álbum de Umbra Atra</div>
+
+        <p>
+          Un viaje a través de la pérdida, el amor imposible, la ausencia,
+          el dolor y la transformación. Ocho canciones que construyen el
+          primer capítulo del universo de Umbra Atra.
+        </p>
+
+        <a href="musica.html" class="album-button">
+          ESCUCHAR Y DESCUBRIR
+        </a>
+      </article>
+
+
+      <!-- ÁLBUM 2 -->
+      <article class="album-card coming-soon">
+        <div class="album-status">PRÓXIMAMENTE</div>
+
+        <h2>MARIONETA DE SANGRE</h2>
+
+        <div class="album-year">Lanzamiento previsto: Octubre de 2026</div>
+
+        <p>
+          El segundo capítulo de Umbra Atra.
+          Una historia más oscura y conceptual, donde una antigua leyenda
+          se transforma en un universo de terror, fantasía y metal.
+        </p>
+
+        <div class="album-button">
+          PRÓXIMAMENTE
+        </div>
+      </article>
+
+
+      <!-- ÁLBUM 3 -->
+      <article class="album-card coming-soon">
+        <div class="album-status">PRÓXIMO CAPÍTULO</div>
+
+        <h2>PRÓXIMAMENTE</h2>
+
+        <div class="album-year">Lanzamiento previsto: Mayo de 2027</div>
+
+        <p>
+          Un nuevo capítulo comenzará después de Marioneta de Sangre.
+          Por ahora, el misterio permanece. La próxima historia del universo
+          de Umbra Atra será revelada en el momento indicado.
+        </p>
+
+        <div class="album-button">
+          EL MISTERIO CONTINÚA
+        </div>
+      </article>
+
+    </section>
+
+    <div class="back-container">
+      <a href="index.html" class="back-button">
+        VOLVER AL INICIO
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 Umbra Atra — Sitio Oficial
+  </footer>
+
+</body>
+</html>
