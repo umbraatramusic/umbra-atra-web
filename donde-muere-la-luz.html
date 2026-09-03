@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Donde Muere la Luz | Umbra Atra</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #090909;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      background: rgba(9, 9, 9, 0.96);
+      border-bottom: 1px solid #222;
+      padding: 18px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .logo {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 3px;
+      font-size: 1.1rem;
+      white-space: nowrap;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 24px;
+    }
+
+    .menu a {
+      color: #cfcfcf;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      color: #d84b4b;
+    }
+
+    .hero {
+      min-height: 48vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px 60px;
+      background:
+        linear-gradient(rgba(0,0,0,0.72), rgba(9,9,9,0.96));
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
+      letter-spacing: 6px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 850px;
+      color: #d0d0d0;
+      font-size: 1.15rem;
+    }
+
+    .section {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 70px 30px;
+    }
+
+    .section-box {
+      border: 1px solid #333;
+      padding: 45px;
+      margin-bottom: 35px;
+      background: rgba(255,255,255,0.015);
+    }
+
+    .section-title {
+      color: #d84b4b;
+      letter-spacing: 5px;
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      font-weight: bold;
+    }
+
+    .section-text {
+      color: #d6d6d6;
+      font-size: 1.08rem;
+      max-width: 950px;
+    }
+
+    .listen-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .button {
+      display: block;
+      text-align: center;
+      padding: 18px 20px;
+      border: 1px solid #b30000;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: #b30000;
+    }
+
+    .lyrics-button {
+      margin-top: 30px;
+      max-width: 320px;
+    }
+
+    .navigation {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 20px 30px 80px;
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .navigation a {
+      text-align: center;
+      min-width: 220px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #777;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .menu {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .listen-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 50px 18px;
+      }
+
+      .section-box {
+        padding: 28px 22px;
+      }
+
+      .navigation {
+        flex-direction: column;
+        padding: 20px 18px 60px;
+      }
+
+      .navigation a {
+        width: 100%;
+      }
+
+      .hero h1 {
+        letter-spacing: 3px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">UMBRA ATRA</a>
+
+    <div class="menu">
+      <a href="index.html">INICIO</a>
+      <a href="musica.html">MÚSICA</a>
+      <a href="albumes.html">ÁLBUMES</a>
+      <a href="significado.html">SIGNIFICADOS</a>
+      <a href="letras.html">LETRAS</a>
+      <a href="historia.html">HISTORIA</a>
+      <a href="contacto.html">CONTACTO</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>DONDE MUERE LA LUZ</h1>
+
+    <p>
+      Una historia sobre un amor imposible, la distancia emocional
+      y el momento en que dos caminos que alguna vez estuvieron unidos
+      deben aceptar que no siempre pueden continuar juntos.
+    </p>
+  </header>
+
+  <main>
+
+    <section class="section">
+
+      <div class="section-box">
+        <div class="section-title">ESCUCHAR</div>
+
+        <p class="section-text">
+          Próximamente estarán disponibles los enlaces oficiales para escuchar
+          «Donde Muere la Luz» en las plataformas digitales.
+        </p>
+
+        <div class="listen-grid">
+          <a href="#" class="button">ESCUCHAR EN SPOTIFY</a>
+          <a href="#" class="button">VER EN YOUTUBE</a>
+          <a href="#" class="button">ESCUCHAR EN APPLE MUSIC</a>
+        </div>
+      </div>
+
+      <div class="section-box">
+        <div class="section-title">SIGNIFICADO</div>
+
+        <p class="section-text">
+          «Donde Muere la Luz» representa el dolor de descubrir que el amor,
+          por profundo que sea, no siempre puede vencer las circunstancias.
+          Es la historia de una conexión que existe, pero que parece condenada
+          por la distancia, el tiempo o aquello que impide a dos personas
+          permanecer juntas.
+          <br><br>
+          La canción se mueve entre la esperanza y la resignación. La luz
+          simboliza aquello que alguna vez parecía posible: un futuro compartido,
+          una promesa o un lugar seguro junto a otra persona. Cuando esa luz
+          comienza a desaparecer, surge la necesidad de aceptar una verdad
+          dolorosa: hay amores que pueden ser reales incluso cuando no están
+          destinados a permanecer.
+          <br><br>
+          Dentro del universo de Umbra Atra, la oscuridad no representa solamente
+          el final. También es el lugar donde permanecen los recuerdos, donde se
+          enfrentan las pérdidas y donde, después del dolor, puede comenzar una
+          nueva transformación.
+        </p>
+      </div>
+
+      <div class="section-box">
+        <div class="section-title">LETRA</div>
+
+        <p class="section-text">
+          Sembré un jardín bajo un eclipse gris,
+esperando el alba que jamás te vi abrir.
+Cada rosa bebió mi silencio,
+cada espina aprendió tu misterio.
+
+Fui la lluvia besando el cristal,
+tú, el invierno negándome entrar.
+Construí catedrales de viento,
+para un dios que jamás despertó.
+
+
+Y mi voz... se perdió en el altar del ayer,
+como un cuervo sin cielo al anochecer.
+
+
+Fui la luna girando en tu mar,
+sin lograr que tus mareas me vieran llegar.
+Fui la llama detrás del dolor,
+consumiendo mis alas por una ilusión.
+Mientras tú respirabas otro amanecer,
+yo aprendía en la sombra a desaparecer.
+
+
+Se quebró la corona de sal,
+que escondía mi reino mortal.
+Cada paso borraba tu nombre,
+pero el eco volvía a nacer.
+
+Las campanas dejaron de hablar,
+las estrellas cayeron al mar.
+Y entendí que las flores más negras
+también saben volver a brotar.
+
+
+No maldigo la noche que fui,
+ni el destino que nunca escribió para mí.
+Porque incluso el hielo más cruel,
+cede al fuego cuando aprende a ceder.
+
+
+Fui la luna girando en tu mar,
+un reflejo perdido que no quiso alcanzar.
+Hoy las sombras me enseñan a andar,
+sin cadenas de un sueño que no fue verdad.
+Si tu sol nunca vino por mí,
+seré eclipse eterno...
+hasta volver a existir.
+ 
+        </p>
+
+        <a href="letras.html#donde-muere-la-luz" class="button lyrics-button">
+          VER LETRA COMPLETA
+        </a>
+      </div>
+
+    </section>
+
+    <div class="navigation">
+      <a href="musica.html" class="button">
+        ← VOLVER A LA MÚSICA
+      </a>
+
+      <a href="el-ultimo-velo.html" class="button">
+        SIGUIENTE CANCIÓN →
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 Umbra Atra — Sitio Oficial
+  </footer>
+
+</body>
+</html>
