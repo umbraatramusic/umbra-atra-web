@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>El Último Velo | Umbra Atra</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #090909;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("photo_2026-07-21_09-00-03.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(8px);
+      transform: scale(1.05);
+      opacity: 0.22;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: -1;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 9, 9, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+      padding: 20px 30px;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo-menu {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #ffffff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 22px;
+    }
+
+    nav ul li a {
+      color: #d0d0d0;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #b30000;
+    }
+
+    main {
+      max-width: 950px;
+      margin: auto;
+      padding: 80px 30px;
+    }
+
+    .song-header {
+      text-align: center;
+      margin-bottom: 65px;
+    }
+
+    .song-number {
+      color: #b30000;
+      font-size: 0.9rem;
+      font-weight: bold;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    .song-header h1 {
+      font-size: 4rem;
+      letter-spacing: 7px;
+      margin-bottom: 18px;
+    }
+
+    .album-name {
+      color: #b8b8b8;
+      letter-spacing: 3px;
+      font-size: 0.95rem;
+    }
+
+    .content-section {
+      border: 1px solid #333;
+      background: rgba(15, 15, 15, 0.78);
+      padding: 40px;
+      margin-bottom: 30px;
+    }
+
+    .content-section h2 {
+      color: #b30000;
+      font-size: 1.3rem;
+      letter-spacing: 3px;
+      margin-bottom: 25px;
+    }
+
+    .content-section p {
+      color: #d0d0d0;
+      line-height: 1.9;
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+    }
+
+    .listen-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .listen-button {
+      display: block;
+      padding: 16px 18px;
+      border: 1px solid #b30000;
+      color: #ffffff;
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .listen-button:hover {
+      background: #b30000;
+    }
+
+    .lyrics {
+      white-space: pre-line;
+      color: #d0d0d0;
+      line-height: 2;
+      font-size: 1.05rem;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .nav-button {
+      display: inline-block;
+      padding: 15px 25px;
+      border: 1px solid #b30000;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .nav-button:hover {
+      background: #b30000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #777;
+      border-top: 1px solid #222;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    @media (max-width: 800px) {
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      main {
+        padding: 60px 20px;
+      }
+
+      .song-header h1 {
+        font-size: 2.6rem;
+        letter-spacing: 4px;
+      }
+
+      .content-section {
+        padding: 25px;
+      }
+
+      .listen-buttons {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation {
+        flex-direction: column;
+      }
+
+      .nav-button {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-container">
+
+      <a href="index.html" class="logo-menu">UMBRA ATRA</a>
+
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="musica.html">MÚSICA</a></li>
+        <li><a href="albumes.html">ÁLBUMES</a></li>
+        <li><a href="significados.html">SIGNIFICADOS</a></li>
+        <li><a href="letras.html">LETRAS</a></li>
+        <li><a href="historia.html">HISTORIA</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <main>
+
+    <header class="song-header">
+
+      <div class="song-number">CANCIÓN 03</div>
+
+      <h1>EL ÚLTIMO VELO</h1>
+
+      <div class="album-name">
+        ÁLBUM: DÉJAME CAER
+      </div>
+
+    </header>
+
+
+    <section class="content-section">
+
+      <h2>LA CANCIÓN</h2>
+
+      <p>
+        El Último Velo es una canción sobre la pérdida de un ser amado y la
+        necesidad de encontrar una forma de continuar cuando alguien deja este
+        mundo. La historia no presenta la muerte como una victoria sobre el amor,
+        sino como una puerta hacia una existencia distinta.
+      </p>
+
+      <p>
+        Entre imágenes de eclipses, cuervos, jardines nocturnos y alas abiertas,
+        la canción transforma el duelo en una promesa de reencuentro. Es una
+        despedida dolorosa, pero también una declaración de amor que se niega a
+        desaparecer y que permanece vivo más allá de la ausencia.
+      </p>
+
+
+      <div class="listen-buttons">
+
+        <a href="https://open.spotify.com/track/5d2ukBsFBEsPxnszPQ9Aip?si=SPcBjbqCRg6JIdPpi0hE8w&utm_source=copy-link"
+           target="_blank"
+           rel="noopener"
+           class="listen-button">
+          ESCUCHAR EN SPOTIFY
+        </a>
+
+        <a href="https://youtu.be/L6g4ughjT2I?is=k5hm3JTIPewK9b-1"
+           target="_blank"
+           rel="noopener"
+           class="listen-button">
+          VER EN YOUTUBE
+        </a>
+
+        <a href="https://music.apple.com/ve/album/el-%C3%BAltimo-velo/6803430078?i=6803430085&ls"
+           target="_blank"
+           rel="noopener"
+           class="listen-button">
+          ESCUCHAR EN APPLE MUSIC
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <section class="content-section">
+
+      <h2>SIGNIFICADO</h2>
+
+      <p>
+        El Último Velo representa la frontera entre la vida y aquello que
+        permanece después de la muerte. El velo simboliza esa puerta que se
+        cruza cuando una persona deja el mundo conocido, mientras quienes
+        permanecen deben aprender a convivir con su ausencia.
+      </p>
+
+      <p>
+        La canción sostiene una idea central: el amor no desaparece al llegar
+        la muerte. Puede cambiar de morada, de forma y de presencia, pero sigue
+        viviendo en la memoria y en el vínculo emocional. Por eso la despedida
+        se convierte también en una promesa: algún día, cuando termine el propio
+        invierno, el camino volverá a unir aquello que el tiempo separó.
+      </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+      <h2>LETRA</h2>
+
+      <div class="lyrics">
+La noche no te llevó...
+solo abrió la puerta...
+
+El reloj dejó de respirar,
+las velas aprendieron a llorar.
+Tu nombre se volvió cristal,
+flotando en un invierno sin final.
+
+Las campanas callaron su canción,
+el cielo vistió de carbón.
+Vi tus alas romper el amanecer,
+como un cuervo aprendiendo a renacer.
+
+No fue un adiós...
+fue un eclipse sobre el sol.
+No fue el final...
+solo cambió tu eternidad.
+
+Cruza el último velo,
+donde el silencio aprende a florecer.
+Guarda mi voz en tu cielo,
+hasta que el destino nos vuelva a tejer.
+
+Si la muerte cerró tus ojos,
+la noche abrió tus alas al mar.
+Yo viviré entre las sombras...
+hasta volverte a encontrar.
+
+Cada lágrima sembró un jardín,
+donde las rosas ya no tienen fin.
+Tu ausencia respira en mi piel,
+como la luna abrazando el laurel.
+
+No te llamo desde el dolor,
+te nombro como una oración.
+Porque el viento trae tu canción,
+desde un reino sin estación.
+
+Cuando el cuervo beba de la luna,
+y las estrellas olviden caer,
+caminaré descalza entre cenizas...
+sin dejar de creer.
+
+Porque el amor no duerme bajo piedra,
+ni se rompe al cruzar la oscuridad.
+Solo cambia de morada...
+para volverse eternidad.
+
+Cruza el último velo,
+no temas al jardín del anochecer.
+Lleva mi alma en tu vuelo,
+que el tiempo jamás podrá romper.
+
+Cuando mi invierno también termine,
+y el eclipse vuelva a nacer...
+tomaré tu mano en silencio...
+y nunca volveremos a caer.
+
+La muerte nunca venció al amor...
+solo aprendió a vestirlo de noche.
+      </div>
+
+    </section>
+
+
+    <div class="navigation">
+
+      <a href="donde-muere-la-luz.html" class="nav-button">
+        ← CANCIÓN ANTERIOR
+      </a>
+
+      <a href="rosas-de-obsidiana.html" class="nav-button">
+        SIGUIENTE CANCIÓN →
+      </a>
+
+    </div>
+
+  </main>
