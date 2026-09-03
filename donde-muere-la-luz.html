@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Donde Muere la Luz | Umbra Atra</title>
+  <title>Dónde Muere la Luz | Umbra Atra</title>
 
   <style>
     * {
@@ -13,151 +13,186 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       background: #090909;
       color: #ffffff;
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("photo_2026-07-21_09-00-03.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(8px);
+      transform: scale(1.05);
+      opacity: 0.22;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: -1;
     }
 
     nav {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      width: 100%;
-      background: rgba(9, 9, 9, 0.96);
+      z-index: 100;
+      background: rgba(9, 9, 9, 0.92);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid #222;
-      padding: 18px 5%;
+      padding: 20px 30px;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 25px;
+      gap: 30px;
     }
 
-    .logo {
-      color: #ffffff;
-      text-decoration: none;
+    .logo-menu {
+      font-size: 1.2rem;
       font-weight: bold;
       letter-spacing: 3px;
-      font-size: 1.1rem;
+      color: #ffffff;
+      text-decoration: none;
       white-space: nowrap;
     }
 
-    .menu {
+    nav ul {
+      list-style: none;
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-      gap: 24px;
+      gap: 22px;
     }
 
-    .menu a {
-      color: #cfcfcf;
+    nav ul li a {
+      color: #d0d0d0;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: bold;
       letter-spacing: 1px;
       transition: 0.3s;
     }
 
-    .menu a:hover {
-      color: #d84b4b;
+    nav ul li a:hover {
+      color: #b30000;
     }
 
-    .hero {
-      min-height: 48vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    main {
+      max-width: 950px;
+      margin: auto;
+      padding: 80px 30px;
+    }
+
+    .song-header {
       text-align: center;
-      padding: 80px 20px 60px;
-      background:
-        linear-gradient(rgba(0,0,0,0.72), rgba(9,9,9,0.96));
+      margin-bottom: 65px;
     }
 
-    .hero h1 {
-      font-size: clamp(2.6rem, 7vw, 5.5rem);
-      letter-spacing: 6px;
+    .song-number {
+      color: #b30000;
+      font-size: 0.9rem;
+      font-weight: bold;
+      letter-spacing: 4px;
       margin-bottom: 20px;
     }
 
-    .hero p {
-      max-width: 850px;
-      color: #d0d0d0;
-      font-size: 1.15rem;
+    .song-header h1 {
+      font-size: 4rem;
+      letter-spacing: 7px;
+      margin-bottom: 18px;
     }
 
-    .section {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 70px 30px;
+    .album-name {
+      color: #b8b8b8;
+      letter-spacing: 3px;
+      font-size: 0.95rem;
     }
 
-    .section-box {
+    .content-section {
       border: 1px solid #333;
-      padding: 45px;
-      margin-bottom: 35px;
-      background: rgba(255,255,255,0.015);
+      background: rgba(15, 15, 15, 0.78);
+      padding: 40px;
+      margin-bottom: 30px;
     }
 
-    .section-title {
-      color: #d84b4b;
-      letter-spacing: 5px;
-      font-size: 1.2rem;
+    .content-section h2 {
+      color: #b30000;
+      font-size: 1.3rem;
+      letter-spacing: 3px;
       margin-bottom: 25px;
-      font-weight: bold;
     }
 
-    .section-text {
-      color: #d6d6d6;
-      font-size: 1.08rem;
-      max-width: 950px;
+    .content-section p {
+      color: #d0d0d0;
+      line-height: 1.9;
+      font-size: 1.05rem;
+      margin-bottom: 18px;
     }
 
-    .listen-grid {
+    .listen-buttons {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 25px;
+      gap: 15px;
+      margin-top: 30px;
     }
 
-    .button {
+    .listen-button {
       display: block;
-      text-align: center;
-      padding: 18px 20px;
+      padding: 16px 18px;
       border: 1px solid #b30000;
       color: #ffffff;
       text-decoration: none;
+      text-align: center;
+      font-size: 0.82rem;
       font-weight: bold;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       transition: 0.3s;
     }
 
-    .button:hover {
+    .listen-button:hover {
       background: #b30000;
     }
 
-    .lyrics-button {
-      margin-top: 30px;
-      max-width: 320px;
+    .lyrics {
+      white-space: pre-line;
+      color: #d0d0d0;
+      line-height: 2;
+      font-size: 1.05rem;
     }
 
     .navigation {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 20px 30px 80px;
       display: flex;
       justify-content: space-between;
-      gap: 25px;
+      gap: 20px;
+      margin-top: 50px;
     }
 
-    .navigation a {
-      text-align: center;
-      min-width: 220px;
+    .nav-button {
+      display: inline-block;
+      padding: 15px 25px;
+      border: 1px solid #b30000;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .nav-button:hover {
+      background: #b30000;
     }
 
     footer {
@@ -165,41 +200,42 @@
       padding: 35px 20px;
       color: #777;
       border-top: 1px solid #222;
+      background: rgba(0, 0, 0, 0.45);
     }
 
     @media (max-width: 800px) {
-      nav {
+      .nav-container {
         flex-direction: column;
       }
 
-      .menu {
+      nav ul {
         justify-content: center;
         gap: 15px;
       }
 
-      .listen-grid {
+      main {
+        padding: 60px 20px;
+      }
+
+      .song-header h1 {
+        font-size: 2.6rem;
+        letter-spacing: 4px;
+      }
+
+      .content-section {
+        padding: 25px;
+      }
+
+      .listen-buttons {
         grid-template-columns: 1fr;
-      }
-
-      .section {
-        padding: 50px 18px;
-      }
-
-      .section-box {
-        padding: 28px 22px;
       }
 
       .navigation {
         flex-direction: column;
-        padding: 20px 18px 60px;
       }
 
-      .navigation a {
-        width: 100%;
-      }
-
-      .hero h1 {
-        letter-spacing: 3px;
+      .nav-button {
+        text-align: center;
       }
     }
   </style>
@@ -208,165 +244,174 @@
 <body>
 
   <nav>
-    <a href="index.html" class="logo">UMBRA ATRA</a>
+    <div class="nav-container">
 
-    <div class="menu">
-      <a href="index.html">INICIO</a>
-      <a href="musica.html">MÚSICA</a>
-      <a href="albumes.html">ÁLBUMES</a>
-      <a href="significado.html">SIGNIFICADOS</a>
-      <a href="letras.html">LETRAS</a>
-      <a href="historia.html">HISTORIA</a>
-      <a href="contacto.html">CONTACTO</a>
+      <a href="index.html" class="logo-menu">UMBRA ATRA</a>
+
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="musica.html">MÚSICA</a></li>
+        <li><a href="albumes.html">ÁLBUMES</a></li>
+        <li><a href="significados.html">SIGNIFICADOS</a></li>
+        <li><a href="letras.html">LETRAS</a></li>
+        <li><a href="historia.html">HISTORIA</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+      </ul>
+
     </div>
   </nav>
 
-  <header class="hero">
-    <h1>DONDE MUERE LA LUZ</h1>
-
-    <p>
-      Una historia sobre un amor imposible, la distancia emocional
-      y el momento en que dos caminos que alguna vez estuvieron unidos
-      deben aceptar que no siempre pueden continuar juntos.
-    </p>
-  </header>
 
   <main>
 
-    <section class="section">
+    <header class="song-header">
 
-      <div class="section-box">
-        <div class="section-title">ESCUCHAR</div>
+      <div class="song-number">CANCIÓN 02</div>
 
-        <div class="listen-grid">
-          <a href="https://open.spotify.com/track/5I8KnmQJh5WVfzjpFFbiF1?si=m5keY49CSN-hTjiYoyOKMA&utm_source=copy-link"
-             class="button"
-             target="_blank"
-             rel="noopener noreferrer">
-            ESCUCHAR EN SPOTIFY
-          </a>
+      <h1>DÓNDE MUERE LA LUZ</h1>
 
-          <a href="https://youtu.be/EDL9VypNQOI?is=XpmgcKrulIJV-Gre"
-             class="button"
-             target="_blank"
-             rel="noopener noreferrer">
-            VER EN YOUTUBE
-          </a>
-
-          <a href="https://music.apple.com/ve/album/d%C3%B3nde-muere-la-luz/6803430078?i=6803430083&ls"
-             class="button"
-             target="_blank"
-             rel="noopener noreferrer">
-            ESCUCHAR EN APPLE MUSIC
-          </a>
-        </div>
+      <div class="album-name">
+        ÁLBUM: DÉJAME CAER
       </div>
 
-      <div class="section-box">
-        <div class="section-title">SIGNIFICADO</div>
+    </header>
 
-        <p class="section-text">
-          «Donde Muere la Luz» habla de un amor que existe, pero que nunca
-          consigue encontrar un lugar donde hacerse realidad. Es la historia
-          de alguien que espera, construye sueños y permanece cerca de una
-          persona que, por distintas circunstancias, nunca llega a corresponder
-          del mismo modo.
-          <br><br>
-          A través de imágenes como el eclipse, la luna, el invierno, las
-          catedrales de viento y las flores negras, la canción representa la
-          sensación de amar desde la distancia emocional. La voz protagonista
-          gira alrededor de un mundo que no logra verla, hasta comprender que
-          no puede seguir consumiéndose por una ilusión.
-          <br><br>
-          Sin embargo, la canción no termina en derrota. Cuando las sombras
-          enseñan a caminar y las flores negras vuelven a brotar, aparece la
-          transformación. El dolor deja de ser una prisión y se convierte en
-          una parte del camino hacia una nueva existencia.
-          <br><br>
-          «Donde Muere la Luz» representa ese lugar oscuro donde termina una
-          esperanza imposible, pero también donde comienza la fuerza necesaria
-          para volver a existir.
-        </p>
-      </div>
 
-      <div class="section-box">
-        <div class="section-title">LETRA</div>
+    <section class="content-section">
 
-        <p class="section-text">
-          <section id="donde-muere-la-luz" class="lyrics-section">
-  <div class="lyrics-container">
+      <h2>LA CANCIÓN</h2>
 
-    <div class="lyrics-title">
-      DONDE MUERE LA LUZ
-    </div>
+      <p>
+        Dónde Muere la Luz es el segundo capítulo musical de Umbra Atra.
+        Es una canción construida alrededor del amor imposible, la distancia
+        emocional y el dolor de permanecer cerca de alguien que parece estar
+        siempre fuera de nuestro alcance.
+      </p>
 
-    <div class="lyrics-text">
-      Sembré un jardín bajo un eclipse gris,<br>
-      esperando el alba que jamás te vi abrir.<br>
-      Cada rosa bebió mi silencio,<br>
-      cada espina aprendió tu misterio.<br><br>
+      <p>
+        La canción no habla únicamente de una ilusión que termina. También
+        representa el momento en que una persona comprende que no puede seguir
+        consumiéndose por algo que nunca llegó a hacerse realidad y comienza
+        a transformar el dolor en una nueva forma de existir.
+      </p>
 
-      Fui la lluvia besando el cristal,<br>
-      tú, el invierno negándome entrar.<br>
-      Construí catedrales de viento,<br>
-      para un dios que jamás despertó.<br><br>
 
-      Y mi voz... se perdió en el altar del ayer,<br>
-      como un cuervo sin cielo al anochecer.<br><br>
+      <div class="listen-buttons">
 
-      Fui la luna girando en tu mar,<br>
-      sin lograr que tus mareas me vieran llegar.<br>
-      Fui la llama detrás del dolor,<br>
-      consumiendo mis alas por una ilusión.<br>
-      Mientras tú respirabas otro amanecer,<br>
-      yo aprendía en la sombra a desaparecer.<br><br>
-
-      Se quebró la corona de sal,<br>
-      que escondía mi reino mortal.<br>
-      Cada paso borraba tu nombre,<br>
-      pero el eco volvía a nacer.<br><br>
-
-      Las campanas dejaron de hablar,<br>
-      las estrellas cayeron al mar.<br>
-      Y entendí que las flores más negras<br>
-      también saben volver a brotar.<br><br>
-
-      No maldigo la noche que fui,<br>
-      ni el destino que nunca escribió para mí.<br>
-      Porque incluso el hielo más cruel,<br>
-      cede al fuego cuando aprende a ceder.<br><br>
-
-      Fui la luna girando en tu mar,<br>
-      un reflejo perdido que no quiso alcanzar.<br>
-      Hoy las sombras me enseñan a andar,<br>
-      sin cadenas de un sueño que no fue verdad.<br>
-      Si tu sol nunca vino por mí,<br>
-      seré eclipse eterno...<br>
-      hasta volver a existir.
-    </div>
-
-  </div>
-</section>
-        </p>
-
-        <a href="letras.html#donde-muere-la-luz" class="button lyrics-button">
-          VER LETRA COMPLETA
+        <a href="https://open.spotify.com/track/5I8KnmQJh5WVfzjpFFbiF1?si=m5keY49CSN-hTjiYoyOKMA&utm_source=copy-link"
+           target="_blank"
+           rel="noopener"
+           class="listen-button">
+          ESCUCHAR EN SPOTIFY
         </a>
+
+        <a href="https://youtu.be/EDL9VypNQOI?is=XpmgcKrulIJV-Gre"
+           target="_blank"
+           rel="noopener"
+           class="listen-button">
+          VER EN YOUTUBE
+        </a>
+
+        <a href="https://music.apple.com/ve/album/d%C3%B3nde-muere-la-luz/6803430078?i=6803430083&ls"
+           target="_blank"
+           rel="noopener"
+           class="listen-button">
+          ESCUCHAR EN APPLE MUSIC
+        </a>
+
       </div>
 
     </section>
 
+
+    <section class="content-section">
+
+      <h2>SIGNIFICADO</h2>
+
+      <p>
+        Dónde Muere la Luz representa el momento en que una persona comprende
+        que no puede obligar a un amor a corresponderse ni permanecer eternamente
+        esperando algo que quizá nunca llegará. Es la tristeza de sentirse cerca
+        de alguien y, al mismo tiempo, vivir emocionalmente fuera de su alcance.
+      </p>
+
+      <p>
+        El eclipse simboliza la ausencia de luz y la sensación de amar desde
+        la distancia. La luna representa a quien gira alrededor de un amor sin
+        conseguir ser visto, mientras que las flores negras expresan la capacidad
+        de volver a crecer incluso después del dolor. El mensaje final no es
+        rendirse, sino transformarse y continuar caminando.
+      </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+      <h2>LETRA</h2>
+
+      <div class="lyrics">
+Sembré un jardín bajo un eclipse gris,
+esperando el alba que jamás te vi abrir.
+Cada rosa bebió mi silencio,
+cada espina aprendió tu misterio.
+
+Fui la lluvia besando el cristal,
+tú, el invierno negándome entrar.
+Construí catedrales de viento,
+para un dios que jamás despertó.
+
+Y mi voz... se perdió en el altar del ayer,
+como un cuervo sin cielo al anochecer.
+
+Fui la luna girando en tu mar,
+sin lograr que tus mareas me vieran llegar.
+Fui la llama detrás del dolor,
+consumiendo mis alas por una ilusión.
+Mientras tú respirabas otro amanecer,
+yo aprendía en la sombra a desaparecer.
+
+Se quebró la corona de sal,
+que escondía mi reino mortal.
+Cada paso borraba tu nombre,
+pero el eco volvía a nacer.
+
+Las campanas dejaron de hablar,
+las estrellas cayeron al mar.
+Y entendí que las flores más negras
+también saben volver a brotar.
+
+No maldigo la noche que fui,
+ni el destino que nunca escribió para mí.
+Porque incluso el hielo más cruel,
+cede al fuego cuando aprende a ceder.
+
+Fui la luna girando en tu mar,
+un reflejo perdido que no quiso alcanzar.
+Hoy las sombras me enseñan a andar,
+sin cadenas de un sueño que no fue verdad.
+Si tu sol nunca vino por mí,
+seré eclipse eterno...
+hasta volver a existir.
+      </div>
+
+    </section>
+
+
     <div class="navigation">
-      <a href="musica.html" class="button">
+
+      <a href="musica.html" class="nav-button">
         ← VOLVER A LA MÚSICA
       </a>
 
-      <a href="el-ultimo-velo.html" class="button">
+      <a href="el-ultimo-velo.html" class="nav-button">
         SIGUIENTE CANCIÓN →
       </a>
+
     </div>
 
   </main>
+
 
   <footer>
     © 2026 Umbra Atra — Sitio Oficial
