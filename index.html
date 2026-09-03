@@ -1,148 +1,779 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Umbra Atra | Sitio Oficial</title>
 
+
   <style>
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    html,
-    body {
-      width: 100%;
-      min-height: 100%;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       background: #090909;
       color: #ffffff;
       font-family: Arial, Helvetica, sans-serif;
-      position: relative;
+      line-height: 1.6;
       overflow-x: hidden;
     }
 
-    /* LOGO DE FONDO */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-
-      background-image: url("photo_2026-07-21_09-00-03.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-
-      filter: blur(8px);
-      transform: scale(1.06);
-      opacity: 0.35;
-
-      z-index: -2;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    /* CAPA OSCURA SOBRE EL LOGO */
-    body::after {
-      content: "";
+    /* MENÚ SUPERIOR */
+
+    nav {
       position: fixed;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          rgba(0,0,0,0.75),
-          rgba(0,0,0,0.95)
-        );
-
-      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 7%;
+      background: rgba(5, 5, 5, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #252525;
+      z-index: 1000;
     }
+
+    .nav-logo {
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #c7c7c7;
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #c40000;
+    }
+
+    /* INICIO / PORTADA PRINCIPAL */
 
     header {
+      position: relative;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 130px 30px 80px;
       text-align: center;
-      padding: 30px;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("photo_2026-07-21_09-00-03.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(8px);
+      transform: scale(1.08);
+      opacity: 0.35;
+      z-index: 0;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0.20),
+        rgba(0, 0, 0, 0.90)
+      );
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     h1 {
       font-size: 5rem;
       letter-spacing: 12px;
       margin-bottom: 20px;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.12);
     }
 
     .subtitle {
-      color: #b8b8b8;
-      font-size: 1.3rem;
+      color: #c8c8c8;
+      font-size: 1.2rem;
       letter-spacing: 4px;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
     }
 
     .description {
-      max-width: 700px;
-      color: #d0d0d0;
-      line-height: 1.7;
+      max-width: 750px;
+      color: #dddddd;
       font-size: 1.1rem;
+      line-height: 1.8;
     }
 
     .button {
+      display: inline-block;
       margin-top: 40px;
-      padding: 15px 35px;
+      padding: 16px 35px;
       border: 1px solid #b30000;
-      color: white;
-      text-decoration: none;
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: bold;
       letter-spacing: 2px;
       transition: 0.3s;
     }
 
     .button:hover {
       background: #b30000;
+      box-shadow: 0 0 25px rgba(179, 0, 0, 0.45);
+      transform: translateY(-3px);
     }
+
+    /* SECCIONES GENERALES */
+
+    section {
+      padding: 100px 10%;
+      border-top: 1px solid #1d1d1d;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      letter-spacing: 5px;
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      text-align: center;
+      color: #9f9f9f;
+      line-height: 1.8;
+    }
+
+    /* LA MÚSICA */
+
+    #musica {
+      background: linear-gradient(180deg, #0b0b0b, #111111);
+    }
+
+    .music-intro {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      color: #cccccc;
+      line-height: 1.9;
+    }
+
+    .music-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .platform-button {
+      padding: 14px 25px;
+      border: 1px solid #303030;
+      color: #ffffff;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .platform-button:hover {
+      border-color: #b30000;
+      color: #e00000;
+    }
+
+    /* ÁLBUMES */
+
+    #albumes {
+      background: #090909;
+    }
+
+    .albums-grid {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .album-card {
+      background: linear-gradient(145deg, #141414, #0b0b0b);
+      border: 1px solid #292929;
+      padding: 45px 35px;
+      text-align: center;
+      transition: 0.4s;
+    }
+
+    .album-card:hover {
+      transform: translateY(-8px);
+      border-color: #b30000;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.65);
+    }
+
+    .album-status {
+      color: #b30000;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    .album-name {
+      font-size: 2rem;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .album-text {
+      color: #aaaaaa;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .album-link {
+      display: inline-block;
+      border-bottom: 1px solid #b30000;
+      padding-bottom: 8px;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    .album-link:hover {
+      color: #e00000;
+    }
+
+    /* HISTORIAS Y SIGNIFICADOS */
+
+    #significados {
+      background: linear-gradient(135deg, #100d0d, #090909);
+    }
+
+    .meaning-container {
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .meaning-album-title {
+      text-align: center;
+      color: #b30000;
+      font-size: 1.2rem;
+      letter-spacing: 4px;
+      margin-bottom: 35px;
+    }
+
+    .meaning-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .meaning-card {
+      background: rgba(20, 20, 20, 0.9);
+      border: 1px solid #292929;
+      padding: 25px;
+      transition: 0.3s;
+    }
+
+    .meaning-card:hover {
+      border-color: #b30000;
+      transform: translateY(-4px);
+    }
+
+    .meaning-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .meaning-card p {
+      color: #999999;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* LETRAS */
+
+    #letras {
+      background: #0c0c0c;
+    }
+
+    .lyrics-container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .lyrics-album-title {
+      text-align: center;
+      color: #b30000;
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      margin-bottom: 35px;
+    }
+
+    .lyrics-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 15px;
+    }
+
+    .lyrics-list li a {
+      display: block;
+      padding: 18px 20px;
+      background: #151515;
+      border-left: 2px solid #292929;
+      color: #cccccc;
+      transition: 0.3s;
+    }
+
+    .lyrics-list li a:hover {
+      border-left-color: #b30000;
+      background: #1b1b1b;
+      color: #ffffff;
+    }
+
+    /* HISTORIA DE UMBRA ATRA */
+
+    #historia {
+      background: linear-gradient(180deg, #111111, #090909);
+    }
+
+    .history-content {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      color: #c7c7c7;
+      line-height: 1.9;
+      font-size: 1.05rem;
+    }
+
+    .history-content p {
+      margin-bottom: 25px;
+    }
+
+    /* CONTACTO Y REDES */
+
+    #contacto {
+      background: #080808;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .social-link {
+      min-width: 130px;
+      padding: 15px 20px;
+      border: 1px solid #292929;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .social-link:hover {
+      border-color: #b30000;
+      background: #180000;
+    }
+
+    /* FOOTER */
 
     footer {
       text-align: center;
-      padding: 30px;
-      color: #777;
-      border-top: 1px solid #222;
+      padding: 35px 20px;
+      background: #050505;
+      color: #666666;
+      border-top: 1px solid #202020;
+      font-size: 0.8rem;
     }
 
-    @media (max-width: 700px) {
+    /* VERSIÓN MÓVIL */
+
+    @media (max-width: 850px) {
+
+      nav {
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 10px 15px;
+      }
+
+      .nav-links a {
+        font-size: 0.68rem;
+      }
+
       h1 {
         font-size: 3rem;
         letter-spacing: 6px;
       }
+
+      .subtitle {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        letter-spacing: 3px;
+      }
+
+      section {
+        padding: 80px 7%;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <header>
-    <h1>UMBRA ATRA</h1>
 
-    <div class="subtitle">
-      SYMPHONIC • GOTHIC • METAL
+  <!-- MENÚ -->
+
+  <nav>
+
+    <a href="#inicio" class="nav-logo">
+      UMBRA ATRA
+    </a>
+
+    <ul class="nav-links">
+
+      <li><a href="#inicio">INICIO</a></li>
+      <li><a href="#musica">MÚSICA</a></li>
+      <li><a href="#albumes">ÁLBUMES</a></li>
+      <li><a href="#significados">SIGNIFICADOS</a></li>
+      <li><a href="#letras">LETRAS</a></li>
+      <li><a href="#historia">HISTORIA</a></li>
+      <li><a href="#contacto">CONTACTO</a></li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- INICIO -->
+
+  <header id="inicio">
+
+    <div class="hero-content">
+
+      <h1>UMBRA ATRA</h1>
+
+      <div class="subtitle">
+        SYMPHONIC • GOTHIC • METAL
+      </div>
+
+      <p class="description">
+        Bienvenidos al sitio oficial de Umbra Atra.
+        Un universo donde la oscuridad, la música sinfónica
+        y el metal se unen para contar historias.
+      </p>
+
+      <a href="#musica" class="button">
+        DESCUBRIR LA MÚSICA
+      </a>
+
     </div>
 
-    <p class="description">
-      Bienvenidos al sitio oficial de Umbra Atra.
-      Un universo donde la oscuridad, la música sinfónica
-      y el metal se unen para contar historias.
+  </header>
+
+
+  <!-- LA MÚSICA -->
+
+  <section id="musica">
+
+    <h2 class="section-title">LA MÚSICA</h2>
+
+    <p class="section-subtitle">
+      La fuerza del metal, la atmósfera gótica
+      y los elementos sinfónicos se unen
+      para construir historias y emociones.
     </p>
 
-    <a href="#musica" class="button">
-      DESCUBRIR LA MÚSICA
-    </a>
-  </header>
+    <div class="music-intro">
+
+      Umbra Atra desarrolla un universo musical donde
+      las melodías, las voces y las atmósferas se convierten
+      en parte de cada historia.
+
+      <br><br>
+
+      Aquí podrás encontrar los enlaces oficiales
+      para escuchar la música de Umbra Atra.
+
+    </div>
+
+    <div class="music-buttons">
+
+      <a href="#" class="platform-button">YOUTUBE</a>
+      <a href="#" class="platform-button">SPOTIFY</a>
+      <a href="#" class="platform-button">YOUTUBE MUSIC</a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ÁLBUMES -->
+
+  <section id="albumes">
+
+    <h2 class="section-title">ÁLBUMES</h2>
+
+    <p class="section-subtitle">
+      Cada álbum abre una nueva puerta
+      dentro del universo musical de Umbra Atra.
+    </p>
+
+    <div class="albums-grid">
+
+      <div class="album-card">
+
+        <div class="album-status">
+          ÁLBUM DISPONIBLE
+        </div>
+
+        <h3 class="album-name">
+          DÉJAME CAER
+        </h3>
+
+        <p class="album-text">
+          El comienzo de un universo de historias
+          marcadas por el amor, la pérdida,
+          la oscuridad, la lucha interior
+          y la esperanza.
+        </p>
+
+        <a href="#significados" class="album-link">
+          DESCUBRIR EL ÁLBUM
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- HISTORIAS Y SIGNIFICADOS -->
+
+  <section id="significados">
+
+    <h2 class="section-title">
+      HISTORIAS Y SIGNIFICADOS
+    </h2>
+
+    <p class="section-subtitle">
+      Detrás de cada canción existe una historia,
+      una emoción y un significado que forman parte
+      del universo de Umbra Atra.
+    </p>
+
+    <div class="meaning-container">
+
+      <div class="meaning-album-title">
+        DÉJAME CAER
+      </div>
+
+      <div class="meaning-list">
+
+        <div class="meaning-card">
+          <h3>DÉJAME CAER</h3>
+          <p>Historia y significado de la canción.</p>
+        </div>
+
+        <div class="meaning-card">
+          <h3>DONDE MUERE LA LUZ</h3>
+          <p>Historia y significado de la canción.</p>
+        </div>
+
+        <div class="meaning-card">
+          <h3>EL ÚLTIMO VELO</h3>
+          <p>Historia y significado de la canción.</p>
+        </div>
+
+        <div class="meaning-card">
+          <h3>ROSAS DE OBSIDIANA</h3>
+          <p>Historia y significado de la canción.</p>
+        </div>
+
+        <div class="meaning-card">
+          <h3>LA CATEDRAL DEL SILENCIO</h3>
+          <p>Historia y significado de la canción.</p>
+        </div>
+
+        <div class="meaning-card">
+          <h3>ECLIPSE ETERNO</h3>
+          <p>Historia y significado de la canción.</p>
+        </div>
+
+        <div class="meaning-card">
+          <h3>ALAS DE CENIZA</h3>
+          <p>Historia y significado de la canción.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LETRAS -->
+
+  <section id="letras">
+
+    <h2 class="section-title">
+      LETRAS
+    </h2>
+
+    <p class="section-subtitle">
+      Explora las letras que forman parte
+      de las historias musicales de Umbra Atra.
+    </p>
+
+    <div class="lyrics-container">
+
+      <div class="lyrics-album-title">
+        DÉJAME CAER
+      </div>
+
+      <ul class="lyrics-list">
+
+        <li><a href="#">DÉJAME CAER</a></li>
+        <li><a href="#">DONDE MUERE LA LUZ</a></li>
+        <li><a href="#">EL ÚLTIMO VELO</a></li>
+        <li><a href="#">ROSAS DE OBSIDIANA</a></li>
+        <li><a href="#">LA CATEDRAL DEL SILENCIO</a></li>
+        <li><a href="#">ECLIPSE ETERNO</a></li>
+        <li><a href="#">ALAS DE CENIZA</a></li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- HISTORIA DE UMBRA ATRA -->
+
+  <section id="historia">
+
+    <h2 class="section-title">
+      HISTORIA DE UMBRA ATRA
+    </h2>
+
+    <div class="history-content">
+
+      <p>
+        Umbra Atra nace como un proyecto musical
+        donde el metal sinfónico, el gothic metal
+        y las atmósferas cinematográficas se unen
+        para contar historias.
+      </p>
+
+      <p>
+        Cada canción busca ir más allá de la música
+        para convertirse en una experiencia narrativa,
+        donde las emociones, los personajes,
+        los recuerdos y la imaginación forman
+        parte de un universo.
+      </p>
+
+      <p>
+        A través de sus álbumes, Umbra Atra
+        construye diferentes mundos y relatos,
+        explorando la oscuridad, la pérdida,
+        el amor, la esperanza y la transformación.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACTO Y REDES -->
+
+  <section id="contacto">
+
+    <h2 class="section-title">
+      CONTACTO Y REDES
+    </h2>
+
+    <p class="section-subtitle">
+      Sigue a Umbra Atra y descubre
+      nuevas canciones, historias
+      y próximos lanzamientos.
+    </p>
+
+    <div class="social-links">
+
+      <a href="#" class="social-link">YOUTUBE</a>
+      <a href="#" class="social-link">INSTAGRAM</a>
+      <a href="#" class="social-link">FACEBOOK</a>
+      <a href="#" class="social-link">TIKTOK</a>
+
+    </div>
+
+  </section>
+
+
+  <!-- PIE DE PÁGINA -->
 
   <footer>
     © 2026 Umbra Atra — Sitio Oficial
   </footer>
 
+
 </body>
+
 </html>
