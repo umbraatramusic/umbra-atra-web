@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rosas de Obsidiana | Umbra Atra</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #090909;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("photo_2026-07-21_09-00-03.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(8px);
+      transform: scale(1.05);
+      opacity: 0.22;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: -1;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 9, 9, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+      padding: 20px 30px;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo-menu {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #ffffff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 22px;
+    }
+
+    nav ul li a {
+      color: #d0d0d0;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #b30000;
+    }
+
+    main {
+      max-width: 950px;
+      margin: auto;
+      padding: 80px 30px;
+    }
+
+    .song-header {
+      text-align: center;
+      margin-bottom: 65px;
+    }
+
+    .song-number {
+      color: #b30000;
+      font-size: 0.9rem;
+      font-weight: bold;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    .song-header h1 {
+      font-size: 4rem;
+      letter-spacing: 7px;
+      margin-bottom: 18px;
+    }
+
+    .album-name {
+      color: #b8b8b8;
+      letter-spacing: 3px;
+      font-size: 0.95rem;
+    }
+
+    .content-section {
+      border: 1px solid #333;
+      background: rgba(15, 15, 15, 0.78);
+      padding: 40px;
+      margin-bottom: 30px;
+    }
+
+    .content-section h2 {
+      color: #b30000;
+      font-size: 1.3rem;
+      letter-spacing: 3px;
+      margin-bottom: 25px;
+    }
+
+    .content-section p {
+      color: #d0d0d0;
+      line-height: 1.9;
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+    }
+
+    .listen-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .listen-button {
+      display: block;
+      padding: 16px 18px;
+      border: 1px solid #b30000;
+      color: #ffffff;
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .listen-button:hover {
+      background: #b30000;
+    }
+
+    .lyrics {
+      white-space: pre-line;
+      color: #d0d0d0;
+      line-height: 2;
+      font-size: 1.05rem;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .nav-button {
+      display: inline-block;
+      padding: 15px 25px;
+      border: 1px solid #b30000;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .nav-button:hover {
+      background: #b30000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #777;
+      border-top: 1px solid #222;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    @media (max-width: 800px) {
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      main {
+        padding: 60px 20px;
+      }
+
+      .song-header h1 {
+        font-size: 2.6rem;
+        letter-spacing: 4px;
+      }
+
+      .content-section {
+        padding: 25px;
+      }
+
+      .listen-buttons {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation {
+        flex-direction: column;
+      }
+
+      .nav-button {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-container">
+
+      <a href="index.html" class="logo-menu">UMBRA ATRA</a>
+
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="musica.html">MÚSICA</a></li>
+        <li><a href="albumes.html">ÁLBUMES</a></li>
+        <li><a href="significados.html">SIGNIFICADOS</a></li>
+        <li><a href="letras.html">LETRAS</a></li>
+        <li><a href="historia.html">HISTORIA</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <main>
+
+    <header class="song-header">
+
+      <div class="song-number">CANCIÓN 04</div>
+
+      <h1>ROSAS DE OBSIDIANA</h1>
+
+      <div class="album-name">
+        ÁLBUM: DÉJAME CAER
+      </div>
+
+    </header>
+
+
+    <section class="content-section">
+
+      <h2>LA CANCIÓN</h2>
+
+      <p>
+        Rosas de Obsidiana es una canción sobre transformar el dolor en fuerza y
+        aprender a reconstruirse después de atravesar momentos difíciles. A través
+        de imágenes de carbón, espinas, cenizas, cuervos y eclipses, la canción
+        presenta a una persona que deja de huir de sus heridas y comienza a
+        reconocerlas como parte de su propia transformación.
+      </p>
+
+      <p>
+        La oscuridad no aparece como un lugar de derrota, sino como el territorio
+        desde el cual vuelve a florecer la esperanza. Las rosas negras simbolizan
+        una belleza nacida de la adversidad: cuanto más profunda es la noche, más
+        fuerte se vuelve la voluntad de renacer.
+      </p>
+
+
+      <div class="listen-buttons">
+
+        <a href="https://open.spotify.com/track/2QHKUoMAGBIeWX6j6mPO2z?si=wDFx4uiWRbu9FsJ3LK--XA&utm_source=copy-link"
+           target="_blank"
+           rel="noopener"
+           class="listen-button">
+          ESCUCHAR EN SPOTIFY
+        </a>
+
+        <a href="https://youtu.be/YyIWHu5wIkI?is=NpW2sn7k-1Hx8U-2"
+           target="_blank"
+           rel="noopener"
+           class="listen-button">
+          VER EN YOUTUBE
+        </a>
+
+        <a href="https://music.apple.com/ve/album/rosas-de-obsidiana/6803430078?i=6803430087&ls"
+           target="_blank"
+           rel="noopener"
+           class="listen-button">
+          ESCUCHAR EN APPLE MUSIC
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <section class="content-section">
+
+      <h2>SIGNIFICADO</h2>
+
+      <p>
+        Rosas de Obsidiana representa la capacidad de encontrar fortaleza en las
+        heridas. La obsidiana, oscura y resistente, se une a la imagen de una rosa
+        para expresar que incluso después del dolor todavía puede existir belleza,
+        crecimiento y una nueva oportunidad para florecer.
+      </p>
+
+      <p>
+        La canción habla de dejar atrás aquello que se perdió sin permitir que el
+        pasado destruya la fe. Las cicatrices, las cenizas y la noche forman parte
+        del camino, pero no determinan el final. El mensaje central es que la
+        oscuridad puede convertirse en fuerza cuando una persona decide levantarse
+        y construir, desde sus propias ruinas, un lugar que nadie pueda quebrar.
+      </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+      <h2>LETRA</h2>
+
+      <div class="lyrics">
+Sembré mis lágrimas en tierra de carbón,
+donde el invierno olvidó mi voz.
+Las espinas fueron mi verdad,
+cada herida me enseñó a despertar.
+
+El viento quiso borrar mi piel,
+pero encontró raíces de acero.
+Bajo un cielo sin compasión,
+aprendí el idioma del dolor.
+
+
+No queda miedo en mi altar,
+las sombras ya no saben lastimar.
+
+
+Soy rosas de obsidiana,
+floreciendo donde muere el sol.
+Belleza nacida del abismo,
+coronada por el dolor.
+
+Que la tormenta diga mi nombre,
+que el cielo vuelva a oscurecer.
+Cuanto más profunda la noche...
+más fuerte vuelvo a renacer.
+
+
+Los cuervos guardan mi canción,
+entre ruinas de un viejo amor.
+La luna besa mi cicatriz,
+como un juramento sin fin.
+
+Ya no persigo lo que perdí,
+ni temo al eco del ayer.
+Las cenizas cubren mi piel,
+pero jamás mi fe.
+
+
+Las flores negras también respiran,
+cuando el mundo deja de creer.
+Cada pétalo es una promesa...
+de volver a florecer.
+
+
+Soy rosas de obsidiana,
+ningún invierno me hará caer.
+En mis venas arde la noche,
+pero mi alma vuelve a nacer.
+
+Que los eclipses sean mi corona,
+que los cuervos guíen mi andar.
+De las ruinas hice mi reino...
+y nadie lo podrá quebrar.
+
+
+Entre cenizas...
+siempre florecerá una rosa.
+      </div>
+
+    </section>
+
+
+    <div class="navigation">
+
+      <a href="el-ultimo-velo.html" class="nav-button">
+        ← CANCIÓN ANTERIOR
+      </a>
+
+      <a href="la-catedral-del-silencio.html" class="nav-button">
+        SIGUIENTE CANCIÓN →
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+    © 2026 Umbra Atra — Sitio Oficial
+  </footer>
+
+</body>
+</html>
