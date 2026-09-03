@@ -5,28 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Umbra Atra | Sitio Oficial</title>
-  
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: url("photo_2026-07-21_09-00-03.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(8px);
-    transform: scale(1.05);
-    opacity: 0.35;
-    z-index: -2;
-}
 
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    z-index: -1;
-}
   <style>
     * {
       margin: 0;
@@ -34,10 +13,51 @@ body::after {
       box-sizing: border-box;
     }
 
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+    }
+
     body {
       background: #090909;
       color: #ffffff;
       font-family: Arial, Helvetica, sans-serif;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* LOGO DE FONDO */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+
+      background-image: url("photo_2026-07-21_09-00-03.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      filter: blur(8px);
+      transform: scale(1.06);
+      opacity: 0.35;
+
+      z-index: -2;
+    }
+
+    /* CAPA OSCURA SOBRE EL LOGO */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.75),
+          rgba(0,0,0,0.95)
+        );
+
+      z-index: -1;
     }
 
     header {
@@ -48,8 +68,6 @@ body::after {
       align-items: center;
       text-align: center;
       padding: 30px;
-      background:
-        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.95));
     }
 
     h1 {
@@ -63,13 +81,6 @@ body::after {
       font-size: 1.3rem;
       letter-spacing: 4px;
       margin-bottom: 40px;
-    }
-
-    .album {
-      color: #b30000;
-      font-size: 1.8rem;
-      font-weight: bold;
-      margin-bottom: 20px;
     }
 
     .description {
