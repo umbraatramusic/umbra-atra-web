@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Umbra Atra | Significados</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #090909;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("photo_2026-07-21_09-00-03.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(8px);
+      transform: scale(1.05);
+      opacity: 0.22;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: -1;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 9, 9, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+      padding: 20px 30px;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo-menu {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #ffffff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 22px;
+    }
+
+    nav ul li a {
+      color: #d0d0d0;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #b30000;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 30px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .page-title h1 {
+      font-size: 3.5rem;
+      letter-spacing: 8px;
+      margin-bottom: 20px;
+    }
+
+    .page-title p {
+      max-width: 780px;
+      margin: auto;
+      color: #c7c7c7;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .album-title {
+      text-align: center;
+      margin-top: 70px;
+      margin-bottom: 40px;
+    }
+
+    .album-title span {
+      display: block;
+      color: #b30000;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    .album-title h2 {
+      font-size: 2.3rem;
+      letter-spacing: 5px;
+    }
+
+    .songs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .song-card {
+      display: block;
+      padding: 28px;
+      border: 1px solid #333;
+      background: rgba(15, 15, 15, 0.78);
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .song-card:hover {
+      border-color: #b30000;
+      background: rgba(179, 0, 0, 0.10);
+      transform: translateY(-4px);
+    }
+
+    .song-number {
+      color: #b30000;
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .song-card h3 {
+      font-size: 1.35rem;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .song-card p {
+      color: #bfbfbf;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .explore {
+      color: #b30000;
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .back-container {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 15px 35px;
+      border: 1px solid #b30000;
+      color: white;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    .back-button:hover {
+      background: #b30000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #777;
+      border-top: 1px solid #222;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    @media (max-width: 800px) {
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      main {
+        padding: 60px 20px;
+      }
+
+      .page-title h1 {
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+      }
+
+      .album-title h2 {
+        font-size: 1.8rem;
+        letter-spacing: 3px;
+      }
+
+      .songs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-container">
+
+      <a href="index.html" class="logo-menu">UMBRA ATRA</a>
+
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="musica.html">MÚSICA</a></li>
+        <li><a href="albumes.html">ÁLBUMES</a></li>
+        <li><a href="significados.html" class="active">SIGNIFICADOS</a></li>
+        <li><a href="letras.html">LETRAS</a></li>
+        <li><a href="historia.html">HISTORIA</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-title">
+
+      <h1>SIGNIFICADOS</h1>
+
+      <p>
+        Detrás de cada canción existe una historia. Explora el significado,
+        las emociones y el universo que dio origen a cada capítulo musical
+        de Umbra Atra.
+      </p>
+
+    </section>
+
+
+    <section class="album-title">
+
+      <span>ÁLBUM</span>
+
+      <h2>DÉJAME CAER</h2>
+
+    </section>
+
+
+    <section class="songs-grid">
+
+      <a href="dejame-caer.html" class="song-card">
+        <div class="song-number">01</div>
+        <h3>DÉJAME CAER</h3>
+        <p>
+          Una despedida emocional y el momento en que alguien decide
+          dejar caer aquello que ya no puede sostener.
+        </p>
+        <span class="explore">EXPLORAR SIGNIFICADO →</span>
+      </a>
+
+
+      <a href="donde-muere-la-luz.html" class="song-card">
+        <div class="song-number">02</div>
+        <h3>DONDE MUERE LA LUZ</h3>
+        <p>
+          Una historia sobre un amor imposible y la lucha por encontrar
+          una luz que parece alejarse cada vez más.
+        </p>
+        <span class="explore">EXPLORAR SIGNIFICADO →</span>
+      </a>
+
+
+      <a href="el-ultimo-velo.html" class="song-card">
+        <div class="song-number">03</div>
+        <h3>EL ÚLTIMO VELO</h3>
+        <p>
+          La ausencia de alguien amado y el difícil momento de aceptar
+          aquello que permanece cuando una presencia desaparece.
+        </p>
+        <span class="explore">EXPLORAR SIGNIFICADO →</span>
+      </a>
+
+
+      <a href="rosas-de-obsidiana.html" class="song-card">
+        <div class="song-number">04</div>
+        <h3>ROSAS DE OBSIDIANA</h3>
+        <p>
+          Aprender a convivir con el dolor y descubrir que incluso las
+          heridas pueden transformarse en parte de nuestra identidad.
+        </p>
+        <span class="explore">EXPLORAR SIGNIFICADO →</span>
+      </a>
+
+
+      <a href="la-catedral-del-silencio.html" class="song-card">
+        <div class="song-number">05</div>
+        <h3>LA CATEDRAL DEL SILENCIO</h3>
+        <p>
+          Un espacio construido por recuerdos, vacío y silencio, donde
+          las memorias continúan hablando incluso cuando todo parece haber terminado.
+        </p>
+        <span class="explore">EXPLORAR SIGNIFICADO →</span>
+      </a>
+
+
+      <a href="eclipse-eterno.html" class="song-card">
+        <div class="song-number">06</div>
+        <h3>ECLIPSE ETERNO</h3>
+        <p>
+          La batalla interior entre la esperanza y la oscuridad,
+          cuando ambas fuerzas parecen convivir dentro de una misma persona.
+        </p>
+        <span class="explore">EXPLORAR SIGNIFICADO →</span>
+      </a>
+
+
+      <a href="alas-de-ceniza.html" class="song-card">
+        <div class="song-number">07</div>
+        <h3>ALAS DE CENIZA</h3>
+        <p>
+          El renacimiento después de las heridas, cuando aquello que parecía
+          destruido comienza lentamente a encontrar una nueva forma de existir.
+        </p>
+        <span class="explore">EXPLORAR SIGNIFICADO →</span>
+      </a>
+
+
+      <a href="umbra-atra.html" class="song-card">
+        <div class="song-number">08</div>
+        <h3>UMBRA ATRA</h3>
+        <p>
+          El cierre del primer capítulo y la representación del universo
+          que une todas las sombras, emociones e historias de Umbra Atra.
+        </p>
+        <span class="explore">EXPLORAR SIGNIFICADO →</span>
+      </a>
+
+    </section>
+
+
+    <div class="back-container">
+
+      <a href="index.html" class="back-button">
+        VOLVER AL INICIO
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+    © 2026 Umbra Atra — Sitio Oficial
+  </footer>
+
+</body>
+</html>
