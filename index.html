@@ -5,7 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Umbra Atra | Sitio Oficial</title>
+  
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("photo_2026-07-21_09-00-03.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+    transform: scale(1.05);
+    opacity: 0.35;
+    z-index: -2;
+}
 
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: -1;
+}
   <style>
     * {
       margin: 0;
