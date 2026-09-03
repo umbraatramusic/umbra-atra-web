@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Eclipse Eterno | Umbra Atra</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #090909;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("photo_2026-07-21_09-00-03.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(8px);
+      transform: scale(1.05);
+      opacity: 0.22;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: -1;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 9, 9, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+      padding: 20px 30px;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo-menu {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #ffffff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 22px;
+    }
+
+    nav ul li a {
+      color: #d0d0d0;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #b30000;
+    }
+
+    main {
+      max-width: 950px;
+      margin: auto;
+      padding: 80px 30px;
+    }
+
+    .song-header {
+      text-align: center;
+      margin-bottom: 65px;
+    }
+
+    .song-number {
+      color: #b30000;
+      font-size: 0.9rem;
+      font-weight: bold;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    .song-header h1 {
+      font-size: 4rem;
+      letter-spacing: 7px;
+      margin-bottom: 18px;
+    }
+
+    .album-name {
+      color: #b8b8b8;
+      letter-spacing: 3px;
+      font-size: 0.95rem;
+    }
+
+    .content-section {
+      border: 1px solid #333;
+      background: rgba(15, 15, 15, 0.78);
+      padding: 40px;
+      margin-bottom: 30px;
+    }
+
+    .content-section h2 {
+      color: #b30000;
+      font-size: 1.3rem;
+      letter-spacing: 3px;
+      margin-bottom: 25px;
+    }
+
+    .content-section p {
+      color: #d0d0d0;
+      line-height: 1.9;
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+    }
+
+    .listen-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .listen-button {
+      display: block;
+      padding: 16px 18px;
+      border: 1px solid #b30000;
+      color: #ffffff;
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .listen-button:hover {
+      background: #b30000;
+    }
+
+    .lyrics {
+      white-space: pre-line;
+      color: #d0d0d0;
+      line-height: 2;
+      font-size: 1.05rem;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .nav-button {
+      display: inline-block;
+      padding: 15px 25px;
+      border: 1px solid #b30000;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .nav-button:hover {
+      background: #b30000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #777;
+      border-top: 1px solid #222;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    @media (max-width: 800px) {
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      main {
+        padding: 60px 20px;
+      }
+
+      .song-header h1 {
+        font-size: 2.6rem;
+        letter-spacing: 4px;
+      }
+
+      .content-section {
+        padding: 25px;
+      }
+
+      .listen-buttons {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation {
+        flex-direction: column;
+      }
+
+      .nav-button {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-container">
+
+      <a href="index.html" class="logo-menu">UMBRA ATRA</a>
+
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="musica.html">MÚSICA</a></li>
+        <li><a href="albumes.html">ÁLBUMES</a></li>
+        <li><a href="significados.html">SIGNIFICADOS</a></li>
+        <li><a href="letras.html">LETRAS</a></li>
+        <li><a href="historia.html">HISTORIA</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <main>
+
+    <header class="song-header">
+
+      <div class="song-number">CANCIÓN 06</div>
+
+      <h1>ECLIPSE ETERNO</h1>
+
+      <div class="album-name">
+        ÁLBUM: DÉJAME CAER
+      </div>
+
+    </header>
+
+
+    <section class="content-section">
+
+      <h2>LA CANCIÓN</h2>
+
+      <p>
+        Eclipse Eterno es una canción sobre la lucha interior y el momento en que
+        una persona deja de dividirse entre la luz y la oscuridad para aceptar que
+        ambas forman parte de su identidad. La voz de la canción atraviesa la
+        ceniza, la tempestad y el dolor hasta descubrir una fuerza que ya no depende
+        de escapar de las sombras.
+      </p>
+
+      <p>
+        El eclipse representa ese instante de transformación en el que dos fuerzas
+        aparentemente opuestas dejan de luchar. No se trata de elegir entre la luz
+        o la noche, sino de encontrar un lugar propio donde ambas puedan existir y
+        convertirse en una nueva forma de renacer.
+      </p>
+
+
+      <div class="listen-buttons">
+
+        <a href="https://open.spotify.com/intl-es/track/2Qc3uLkEFkJlLPbJb7qt1S?si=614ed98ff2704c8d"
+           target="_blank"
+           rel="noopener"
+           class="listen-button">
+          ESCUCHAR EN SPOTIFY
+        </a>
+
+        <a href="https://youtu.be/l5fxFcbLgwk?si=aUU6WLAmBQd20377"
+           target="_blank"
+           rel="noopener"
+           class="listen-button">
+          VER EN YOUTUBE
+        </a>
+
+        <a href="https://music.apple.com/ve/song/eclipse-eterno/6803430094"
+           target="_blank"
+           rel="noopener"
+           class="listen-button">
+          ESCUCHAR EN APPLE MUSIC
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <section class="content-section">
+
+      <h2>SIGNIFICADO</h2>
+
+      <p>
+        Eclipse Eterno representa la reconciliación con la propia oscuridad. La
+        canción plantea que las heridas, las lágrimas y los momentos difíciles no
+        necesariamente destruyen a una persona: también pueden enseñarle a caminar
+        y ayudarle a descubrir una identidad más fuerte.
+      </p>
+
+      <p>
+        La frase central, “No soy la luz... ni soy la noche”, expresa la idea de no
+        pertenecer por completo a un solo extremo. El eclipse se convierte entonces
+        en un símbolo de equilibrio y transformación: el punto donde la oscuridad
+        deja de ser enemiga y la luz deja de ser una obligación. Desde ese lugar,
+        el personaje encuentra su propio reino y decide que nadie podrá volver a
+        eclipsar lo que ha aprendido a ser.
+      </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+      <h2>LETRA</h2>
+
+      <div class="lyrics">
+La luna vistió de negro al sol,
+y el cielo olvidó su color.
+Las estrellas dejaron caer
+sus coronas sobre mi piel.
+
+Fui ceniza, fui tempestad,
+un suspiro frente al mar.
+Pero el fuego que me quebró,
+también me enseñó su voz.
+
+Entre la sombra y la claridad,
+descubrí mi verdadera faz.
+
+Soy un eclipse eterno,
+ni la noche me podrá vencer.
+Llevo un universo
+donde las sombras también dan fe.
+
+No hay cadenas en mi destino,
+ni silencio que pueda romper
+el latido de un alma
+que aprendió a renacer.
+
+El cuervo alzó su inmenso vuelo,
+dibujando círculos al cielo.
+La tormenta besó mi altar,
+pero no logró apagar mi mar.
+
+Cada lágrima fue un cristal,
+reflejando la inmensidad.
+Ya no huyo de la oscuridad,
+ella me enseñó a caminar.
+
+No soy la luz...
+ni soy la noche.
+
+Soy el instante
+donde ambas dejan de luchar.
+
+Mi corazón
+es el horizonte
+donde el eclipse
+vuelve a comenzar.
+
+Soy un eclipse eterno,
+la frontera entre vivir y caer.
+Si el destino escribe en sombras,
+yo responderé con mi ser.
+
+Que los cielos cierren sus puertas,
+que los vientos dejen de hablar.
+Mi alma ya encontró su reino...
+y nadie lo podrá eclipsar.
+
+Cuando el sol abrace la noche...
+volveré a nacer.
+      </div>
+
+    </section>
+
+
+    <div class="navigation">
+
+      <a href="la-catedral-del-silencio.html" class="nav-button">
+        ← CANCIÓN ANTERIOR
+      </a>
+
+      <a href="alas-de-ceniza.html" class="nav-button">
+        SIGUIENTE CANCIÓN →
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+    © 2026 Umbra Atra — Sitio Oficial
+  </footer>
+
+</body>
+</html>
