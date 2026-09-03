@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Catedral del Silencio | Umbra Atra</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #090909; color: #ffffff; font-family: Arial, Helvetica, sans-serif; min-height: 100vh; }
+    body::before { content: ""; position: fixed; inset: 0; background-image: url("photo_2026-07-21_09-00-03.jpg"); background-size: cover; background-position: center; background-repeat: no-repeat; filter: blur(8px); transform: scale(1.05); opacity: 0.22; z-index: -2; }
+    body::after { content: ""; position: fixed; inset: 0; background: rgba(0,0,0,0.72); z-index: -1; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(9,9,9,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid #222; padding: 20px 30px; }
+    .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+    .logo-menu { font-size: 1.2rem; font-weight: bold; letter-spacing: 3px; color: #fff; text-decoration: none; white-space: nowrap; }
+    nav ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 22px; }
+    nav ul li a { color: #d0d0d0; text-decoration: none; font-size: .85rem; font-weight: bold; letter-spacing: 1px; transition: .3s; }
+    nav ul li a:hover { color: #b30000; }
+    main { max-width: 950px; margin: auto; padding: 80px 30px; }
+    .song-header { text-align: center; margin-bottom: 65px; }
+    .song-number { color: #b30000; font-size: .9rem; font-weight: bold; letter-spacing: 4px; margin-bottom: 20px; }
+    .song-header h1 { font-size: 4rem; letter-spacing: 7px; margin-bottom: 18px; }
+    .album-name { color: #b8b8b8; letter-spacing: 3px; font-size: .95rem; }
+    .content-section { border: 1px solid #333; background: rgba(15,15,15,.78); padding: 40px; margin-bottom: 30px; }
+    .content-section h2 { color: #b30000; font-size: 1.3rem; letter-spacing: 3px; margin-bottom: 25px; }
+    .content-section p { color: #d0d0d0; line-height: 1.9; font-size: 1.05rem; margin-bottom: 18px; }
+    .listen-buttons { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; margin-top: 30px; }
+    .listen-button { display: block; padding: 16px 18px; border: 1px solid #b30000; color: #fff; text-decoration: none; text-align: center; font-size: .82rem; font-weight: bold; letter-spacing: 1px; transition: .3s; }
+    .listen-button:hover, .nav-button:hover { background: #b30000; }
+    .lyrics { white-space: pre-line; color: #d0d0d0; line-height: 2; font-size: 1.05rem; }
+    .navigation { display: flex; justify-content: space-between; gap: 20px; margin-top: 50px; }
+    .nav-button { display: inline-block; padding: 15px 25px; border: 1px solid #b30000; color: #fff; text-decoration: none; letter-spacing: 1px; transition: .3s; }
+    footer { text-align: center; padding: 35px 20px; color: #777; border-top: 1px solid #222; background: rgba(0,0,0,.45); }
+    @media (max-width: 800px) {
+      .nav-container { flex-direction: column; }
+      nav ul { justify-content: center; gap: 15px; }
+      main { padding: 60px 20px; }
+      .song-header h1 { font-size: 2.6rem; letter-spacing: 4px; }
+      .content-section { padding: 25px; }
+      .listen-buttons { grid-template-columns: 1fr; }
+      .navigation { flex-direction: column; }
+      .nav-button { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo-menu">UMBRA ATRA</a>
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="musica.html">MÚSICA</a></li>
+        <li><a href="albumes.html">ÁLBUMES</a></li>
+        <li><a href="significados.html">SIGNIFICADOS</a></li>
+        <li><a href="letras.html">LETRAS</a></li>
+        <li><a href="historia.html">HISTORIA</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <header class="song-header">
+      <div class="song-number">CANCIÓN 05</div>
+      <h1>LA CATEDRAL DEL SILENCIO</h1>
+      <div class="album-name">ÁLBUM: DÉJAME CAER</div>
+    </header>
+
+    <section class="content-section">
+      <h2>LA CANCIÓN</h2>
+      <p>La Catedral del Silencio es una canción sobre la ausencia, los recuerdos y el proceso de aprender a convivir con un vacío que permanece después de la pérdida. La catedral funciona como un espacio simbólico donde todo parece detenido y donde la memoria continúa hablando incluso cuando ya no queda nadie que pueda responder.</p>
+      <p>Entre vitrales apagados, velas, campanas, cuervos y ruinas, la canción transforma el silencio en un lugar de encuentro con aquello que se ha ido. No busca negar el dolor, sino comprender que el recuerdo también puede convertirse en una forma de compañía y que, incluso dentro de la ausencia, todavía puede existir una luz que resista.</p>
+      <div class="listen-buttons">
+        <a href="https://open.spotify.com/intl-es/track/2upPn4D16cjFmJQti0jpl6?si=94ad7bb0c2c54564" target="_blank" rel="noopener" class="listen-button">ESCUCHAR EN SPOTIFY</a>
+        <a href="https://youtu.be/mUCEfw8U_JA?si=qsXQa73UuxWIq9l1" target="_blank" rel="noopener" class="listen-button">VER EN YOUTUBE</a>
+        <a href="https://music.apple.com/ve/song/la-catedral-del-silencio/6803430092" target="_blank" rel="noopener" class="listen-button">ESCUCHAR EN APPLE MUSIC</a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>SIGNIFICADO</h2>
+      <p>La Catedral del Silencio representa el lugar interior donde permanecen los recuerdos de alguien que ya no está. La catedral es una metáfora de la memoria: enorme, silenciosa y llena de ecos que continúan existiendo aunque el tiempo haya cambiado todo a su alrededor.</p>
+      <p>La canción habla de comprender que el vacío no siempre debe combatirse. A veces es necesario entrar en él, escucharlo y aceptar que también puede abrazar. Las lágrimas, las oraciones y los ecos representan la permanencia del amor, mientras el final plantea que el silencio también puede conservar aquello que creemos perdido.</p>
+    </section>
+
+    <section class="content-section">
+      <h2>LETRA</h2>
+      <div class="lyrics">
+Crucé las puertas del ayer,
+donde el mármol aprendió a llorar.
+Mil vitrales sin color
+guardaban el eco de tu voz.
+
+Las velas ya no dan calor,
+solo dibujan sombras sobre Dios.
+Cada paso rompe la quietud,
+como un réquiem de cristal y luz.
+
+Aquí el tiempo dejó de respirar,
+y el viento aprendió a rezar.
+
+En la Catedral del Silencio,
+los recuerdos cantan sin hablar.
+Cada lágrima es un incienso
+que jamás dejó de arder.
+
+Si tu nombre vive en el eco,
+nunca podrá morir.
+Porque el amor no encuentra tumba...
+cuando aprende a resistir.
+
+Los bancos guardan la oración
+de las almas que olvidaron volver.
+Los cuervos duermen en la cruz,
+mientras la luna besa el altar.
+
+No vine a pedir perdón,
+ni a desafiar la eternidad.
+Solo vine a comprender
+que el vacío también sabe abrazar.
+
+Escucho tus pasos
+donde nadie más camina.
+Siento tu aliento
+en el polvo de las ruinas.
+
+Y aunque el mundo calle mi dolor,
+tu memoria será mi canción.
+
+En la Catedral del Silencio,
+cada sombra aprendió a florecer.
+
+Las campanas ya no lloran...
+ahora me enseñan a creer.
+
+Cuando el último vitral se apague,
+y el alba vuelva a despertar,
+encontraré tu luz escondida...
+donde el silencio se hace eternidad.
+
+El silencio...
+también sabe pronunciar tu nombre.
+      </div>
+    </section>
+
+    <div class="navigation">
+      <a href="rosas-de-obsidiana.html" class="nav-button">← CANCIÓN ANTERIOR</a>
+      <a href="eclipse-eterno.html" class="nav-button">SIGUIENTE CANCIÓN →</a>
+    </div>
+  </main>
+
+  <footer>© 2026 Umbra Atra — Sitio Oficial</footer>
+</body>
+</html>
