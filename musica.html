@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Umbra Atra | Música</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: #090909; color: #ffffff; font-family: Arial, Helvetica, sans-serif; }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("photo_2026-07-21_09-00-03.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(8px);
+      transform: scale(1.05);
+      opacity: 0.22;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: -1;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 9, 9, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+      padding: 20px 30px;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo-menu {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #ffffff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 22px;
+    }
+
+    nav ul li a {
+      color: #d0d0d0;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover { color: #b30000; }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 30px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .page-title h1 {
+      font-size: 3.5rem;
+      letter-spacing: 8px;
+      margin-bottom: 20px;
+    }
+
+    .page-title p {
+      max-width: 750px;
+      margin: auto;
+      color: #c7c7c7;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .album-section { margin-top: 70px; }
+
+    .album-section h2 {
+      text-align: center;
+      color: #b30000;
+      letter-spacing: 5px;
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+    }
+
+    .album-card {
+      border: 1px solid #333;
+      background: rgba(15, 15, 15, 0.75);
+      padding: 40px;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .album-card h3 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      letter-spacing: 3px;
+    }
+
+    .album-card p {
+      color: #c9c9c9;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .tracks {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .track {
+      display: block;
+      padding: 18px 20px;
+      border: 1px solid #333;
+      background: rgba(255, 255, 255, 0.03);
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .track:hover {
+      border-color: #b30000;
+      background: rgba(179, 0, 0, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .track-number {
+      color: #b30000;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .track-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 50px;
+      padding: 15px 30px;
+      border: 1px solid #b30000;
+      color: white;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    .back-button:hover { background: #b30000; }
+    .button-container { text-align: center; }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #777;
+      border-top: 1px solid #222;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    @media (max-width: 800px) {
+      .nav-container { flex-direction: column; }
+      nav ul { justify-content: center; gap: 15px; }
+      .page-title h1 { font-size: 2.5rem; letter-spacing: 5px; }
+      .tracks { grid-template-columns: 1fr; }
+      .album-card { padding: 25px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo-menu">UMBRA ATRA</a>
+
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="musica.html">MÚSICA</a></li>
+        <li><a href="albumes.html">ÁLBUMES</a></li>
+        <li><a href="significados.html">SIGNIFICADOS</a></li>
+        <li><a href="letras.html">LETRAS</a></li>
+        <li><a href="historia.html">HISTORIA</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-title">
+      <h1>MÚSICA</h1>
+      <p>
+        Explora la música de Umbra Atra. Cada canción forma parte
+        de un universo de historias, emociones, oscuridad y música
+        sinfónica.
+      </p>
+    </section>
+
+    <section class="album-section">
+      <h2>DÉJAME CAER</h2>
+
+      <div class="album-card">
+        <h3>Déjame Caer</h3>
+
+        <p>
+          El primer capítulo musical de Umbra Atra.
+          Un recorrido por la pérdida, el amor imposible,
+          la oscuridad, el dolor y la transformación.
+        </p>
+
+        <div class="tracks">
+
+          <a href="dejame-caer.html" class="track">
+            <div class="track-number">01</div>
+            <div class="track-title">DÉJAME CAER</div>
+          </a>
+
+          <a href="donde-muere-la-luz.html" class="track">
+            <div class="track-number">02</div>
+            <div class="track-title">DONDE MUERE LA LUZ</div>
+          </a>
+
+          <a href="el-ultimo-velo.html" class="track">
+            <div class="track-number">03</div>
+            <div class="track-title">EL ÚLTIMO VELO</div>
+          </a>
+
+          <a href="rosas-de-obsidiana.html" class="track">
+            <div class="track-number">04</div>
+            <div class="track-title">ROSAS DE OBSIDIANA</div>
+          </a>
+
+          <a href="la-catedral-del-silencio.html" class="track">
+            <div class="track-number">05</div>
+            <div class="track-title">LA CATEDRAL DEL SILENCIO</div>
+          </a>
+
+          <a href="eclipse-eterno.html" class="track">
+            <div class="track-number">06</div>
+            <div class="track-title">ECLIPSE ETERNO</div>
+          </a>
+
+          <a href="alas-de-ceniza.html" class="track">
+            <div class="track-number">07</div>
+            <div class="track-title">ALAS DE CENIZA</div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="button-container">
+      <a href="index.html" class="back-button">VOLVER AL INICIO</a>
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 Umbra Atra — Sitio Oficial
+  </footer>
+
+</body>
+</html>
