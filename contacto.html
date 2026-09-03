@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbra Atra | Contacto</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  background:#090909;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  min-height:100vh;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:url("photo_2026-07-21_09-00-03.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  filter:blur(8px);
+  transform:scale(1.05);
+  opacity:.22;
+  z-index:-2;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.72);
+  z-index:-1;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(9,9,9,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #222;
+  padding:20px 30px;
+}
+
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+}
+
+.logo-menu{
+  font-size:1.2rem;
+  font-weight:bold;
+  letter-spacing:3px;
+  color:#fff;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:22px;
+}
+
+nav ul li a{
+  color:#d0d0d0;
+  text-decoration:none;
+  font-size:.85rem;
+  font-weight:bold;
+  letter-spacing:1px;
+  transition:.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+  color:#b30000;
+}
+
+main{
+  max-width:1100px;
+  margin:auto;
+  padding:80px 30px;
+}
+
+.page-title{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.page-title h1{
+  font-size:3.5rem;
+  letter-spacing:8px;
+  margin-bottom:20px;
+}
+
+.page-title p{
+  max-width:760px;
+  margin:auto;
+  color:#c7c7c7;
+  line-height:1.8;
+  font-size:1.05rem;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.contact-card{
+  border:1px solid #333;
+  background:rgba(15,15,15,.78);
+  padding:35px;
+}
+
+.contact-card h2{
+  font-size:1.4rem;
+  letter-spacing:2px;
+  margin-bottom:18px;
+}
+
+.contact-card p{
+  color:#c7c7c7;
+  line-height:1.8;
+}
+
+.email{
+  color:#fff;
+  text-decoration:none;
+  font-size:1.1rem;
+  font-weight:bold;
+  display:inline-block;
+  margin-top:15px;
+}
+
+.email:hover{
+  color:#b30000;
+}
+
+.platforms{
+  margin-top:70px;
+}
+
+.platforms-title{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.platforms-title h2{
+  font-size:2rem;
+  letter-spacing:4px;
+  margin-bottom:15px;
+}
+
+.platforms-title p{
+  color:#bdbdbd;
+}
+
+.links-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.platform-link{
+  display:block;
+  text-decoration:none;
+  color:#fff;
+  border:1px solid #333;
+  background:rgba(15,15,15,.78);
+  padding:28px 20px;
+  text-align:center;
+  transition:.3s;
+}
+
+.platform-link:hover{
+  border-color:#b30000;
+  background:rgba(179,0,0,.10);
+  transform:translateY(-4px);
+}
+
+.platform-name{
+  display:block;
+  font-size:1.1rem;
+  font-weight:bold;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+
+.platform-text{
+  color:#aaa;
+  font-size:.85rem;
+}
+
+.back-container{
+  text-align:center;
+  margin-top:60px;
+}
+
+.back-button{
+  display:inline-block;
+  padding:15px 35px;
+  border:1px solid #b30000;
+  color:#fff;
+  text-decoration:none;
+  letter-spacing:2px;
+  transition:.3s;
+}
+
+.back-button:hover{
+  background:#b30000;
+}
+
+footer{
+  text-align:center;
+  padding:35px 20px;
+  color:#777;
+  border-top:1px solid #222;
+  background:rgba(0,0,0,.45);
+}
+
+@media(max-width:850px){
+  .nav-container{flex-direction:column}
+  nav ul{justify-content:center;gap:15px}
+  main{padding:60px 20px}
+  .page-title h1{font-size:2.5rem;letter-spacing:5px}
+  .contact-grid{grid-template-columns:1fr}
+  .links-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="nav-container">
+
+<a href="index.html" class="logo-menu">UMBRA ATRA</a>
+
+<ul>
+<li><a href="index.html">INICIO</a></li>
+<li><a href="musica.html">MÚSICA</a></li>
+<li><a href="albumes.html">ÁLBUMES</a></li>
+<li><a href="significados.html">SIGNIFICADOS</a></li>
+<li><a href="letras.html">LETRAS</a></li>
+<li><a href="historia.html">HISTORIA</a></li>
+<li><a href="contacto.html" class="active">CONTACTO</a></li>
+</ul>
+
+</div>
+</nav>
+
+<main>
+
+<section class="page-title">
+<h1>CONTACTO</h1>
+<p>
+Para contacto general, propuestas, prensa o cualquier comunicación
+relacionada con Umbra Atra, puedes escribir directamente al correo oficial
+o seguir el proyecto en sus plataformas.
+</p>
+</section>
+
+<section class="contact-grid">
+
+<div class="contact-card">
+<h2>CONTACTO OFICIAL</h2>
+<p>
+Para comunicaciones relacionadas con Umbra Atra, utiliza el correo oficial:
+</p>
+<a class="email" href="mailto:umbraatraoficial@gmail.com">
+umbraatraoficial@gmail.com
+</a>
+</div>
+
+<div class="contact-card">
+<h2>UMBRA ATRA</h2>
+<p>
+Sigue el proyecto y descubre nuevas canciones, videos, novedades
+y futuros capítulos del universo musical de Umbra Atra.
+</p>
+</div>
+
+</section>
+
+<section class="platforms">
+
+<div class="platforms-title">
+<h2>ESCUCHA Y SIGUE A UMBRA ATRA</h2>
+<p>Encuentra la música y las novedades oficiales en estas plataformas.</p>
+</div>
+
+<div class="links-grid">
+
+<a class="platform-link" href="https://youtube.com/@umbraatra?si=UvU23WUsGftP4q-v" target="_blank" rel="noopener">
+<span class="platform-name">YOUTUBE</span>
+<span class="platform-text">Videos y música oficial</span>
+</a>
+
+<a class="platform-link" href="https://www.instagram.com/umbraatraoficial?igsi=bzV6Ymh6OXpscTVw" target="_blank" rel="noopener">
+<span class="platform-name">INSTAGRAM</span>
+<span class="platform-text">Noticias y contenido visual</span>
+</a>
+
+<a class="platform-link" href="https://open.spotify.com/artist/5SvS1POtKK6j0AkJL112bq?si=ie8qZSHsT2ao4SslNaqtww&utm_source=copy-link" target="_blank" rel="noopener">
+<span class="platform-name">SPOTIFY</span>
+<span class="platform-text">Escucha la música oficial</span>
+</a>
+
+<a class="platform-link" href="https://music.apple.com/ve/artist/umbra-atra/6802288664?ls" target="_blank" rel="noopener">
+<span class="platform-name">APPLE MUSIC</span>
+<span class="platform-text">Escucha Umbra Atra</span>
+</a>
+
+<a class="platform-link" href="https://www.tiktok.com/@umbra.atra?_r=1&_t=ZS-99QS5PHtiza" target="_blank" rel="noopener">
+<span class="platform-name">TIKTOK</span>
+<span class="platform-text">Videos y novedades</span>
+</a>
+
+</div>
+
+</section>
+
+<div class="back-container">
+<a href="index.html" class="back-button">VOLVER AL INICIO</a>
+</div>
+
+</main>
+
+<footer>
+© 2026 Umbra Atra — Sitio Oficial
+</footer>
+
+</body>
+</html>
