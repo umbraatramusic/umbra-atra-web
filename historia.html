@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Umbra Atra | Historia</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #090909;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("photo_2026-07-21_09-00-03.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(8px);
+      transform: scale(1.05);
+      opacity: 0.22;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: -1;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 9, 9, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+      padding: 20px 30px;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo-menu {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #ffffff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 22px;
+    }
+
+    nav ul li a {
+      color: #d0d0d0;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #b30000;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 80px 30px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .page-title h1 {
+      font-size: 3.5rem;
+      letter-spacing: 8px;
+      margin-bottom: 20px;
+    }
+
+    .page-title p {
+      max-width: 760px;
+      margin: auto;
+      color: #c7c7c7;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .history {
+      border-left: 2px solid #b30000;
+      padding-left: 35px;
+    }
+
+    .chapter {
+      margin-bottom: 55px;
+    }
+
+    .chapter-label {
+      color: #b30000;
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    .chapter h2 {
+      font-size: 2rem;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .chapter p {
+      color: #d0d0d0;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+
+    .highlight {
+      border: 1px solid #333;
+      background: rgba(15, 15, 15, 0.78);
+      padding: 35px;
+      margin-top: 30px;
+    }
+
+    .highlight h3 {
+      color: #b30000;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+      font-size: 1.2rem;
+    }
+
+    .highlight p {
+      color: #c7c7c7;
+      line-height: 1.8;
+    }
+
+    .back-container {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 15px 35px;
+      border: 1px solid #b30000;
+      color: white;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    .back-button:hover {
+      background: #b30000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #777;
+      border-top: 1px solid #222;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    @media (max-width: 800px) {
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      main {
+        padding: 60px 20px;
+      }
+
+      .page-title h1 {
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+      }
+
+      .history {
+        padding-left: 22px;
+      }
+
+      .chapter h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-container">
+
+      <a href="index.html" class="logo-menu">UMBRA ATRA</a>
+
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="musica.html">MÚSICA</a></li>
+        <li><a href="albumes.html">ÁLBUMES</a></li>
+        <li><a href="significados.html">SIGNIFICADOS</a></li>
+        <li><a href="letras.html">LETRAS</a></li>
+        <li><a href="historia.html" class="active">HISTORIA</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <main>
+
+    <section class="page-title">
+
+      <h1>MI HISTORIA</h1>
+
+      <p>
+        Umbra Atra nació de una pasión por el rock, el metal y la necesidad
+        de convertir historias y emociones en canciones.
+      </p>
+
+    </section>
+
+
+    <section class="history">
+
+      <article class="chapter">
+
+        <div class="chapter-label">EL ORIGEN</div>
+
+        <h2>UNA PASIÓN QUE VENÍA DE MUCHO TIEMPO</h2>
+
+        <p>
+          La historia de Umbra Atra comienza mucho antes de la primera canción.
+          Nace de una relación personal con el rock y el metal, géneros que
+          durante años despertaron una profunda fascinación por su fuerza,
+          sus melodías y su capacidad para contar historias.
+        </p>
+
+        <p>
+          La influencia llegó desde diferentes vertientes del rock y del metal,
+          tanto en inglés como en español, pero especialmente desde el metal
+          sinfónico y el metal gótico. La combinación de guitarras, orquestaciones,
+          voces poderosas y atmósferas oscuras fue construyendo poco a poco la
+          identidad musical que más adelante daría vida a Umbra Atra.
+        </p>
+
+      </article>
+
+
+      <article class="chapter">
+
+        <div class="chapter-label">UNA IDEA</div>
+
+        <h2>EL DESEO DE CREAR ALGO PROPIO</h2>
+
+        <p>
+          Durante mucho tiempo existió el deseo de crear música propia.
+          No solo escuchar las historias creadas por otros artistas, sino
+          construir un universo musical personal, escribir canciones y dar
+          forma a ideas que habían permanecido durante años en la imaginación.
+        </p>
+
+        <p>
+          Sin embargo, existía un obstáculo importante: no saber tocar un
+          instrumento musical. Lejos de significar el final de esa idea,
+          esa limitación terminó convirtiéndose en el punto de partida para
+          buscar una nueva manera de hacer realidad el proyecto.
+        </p>
+
+      </article>
+
+
+      <article class="chapter">
+
+        <div class="chapter-label">EL ENCUENTRO CON LA TECNOLOGÍA</div>
+
+        <h2>LA IA COMO HERRAMIENTA CREATIVA</h2>
+
+        <p>
+          La llegada de nuevas herramientas basadas en inteligencia artificial
+          abrió una posibilidad que antes parecía imposible. Por primera vez,
+          fue posible transformar ideas musicales en composiciones y comenzar
+          a explorar sonidos, arreglos y atmósferas sin necesidad de dominar
+          personalmente un instrumento.
+        </p>
+
+        <p>
+          La inteligencia artificial se convirtió entonces en una herramienta
+          dentro del proceso creativo de Umbra Atra, permitiendo experimentar
+          con sonidos y dar forma musical a una visión artística.
+        </p>
+
+        <div class="highlight">
+
+          <h3>LAS LETRAS NACEN DE UNA VOZ HUMANA</h3>
+
+          <p>
+            Aunque la inteligencia artificial forma parte del proceso de creación
+            musical, las letras de las canciones son escritas personalmente por
+            el creador del proyecto. Las historias, emociones, conceptos y
+            palabras que forman el corazón de las canciones nacen de una visión
+            humana y personal.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="chapter">
+
+        <div class="chapter-label">EL NACIMIENTO DE UMBRA ATRA</div>
+
+        <h2>CONVERTIR IDEAS EN UN UNIVERSO MUSICAL</h2>
+
+        <p>
+          De esa combinación entre pasión por el rock y el metal, escritura,
+          imaginación y nuevas herramientas tecnológicas nació Umbra Atra.
+          El proyecto no pretende reemplazar la música tradicional, sino
+          utilizar nuevas posibilidades para hacer realidad una visión creativa
+          que de otra manera habría permanecido únicamente como una idea.
+        </p>
+
+        <p>
+          Umbra Atra es un espacio donde la oscuridad, las emociones y las
+          historias se transforman en música. Cada canción representa un capítulo
+          y cada álbum abre la puerta a un nuevo universo.
+        </p>
+
+      </article>
+
+
+      <article class="chapter">
+
+        <div class="chapter-label">EL PRIMER CAPÍTULO</div>
+
+        <h2>DÉJAME CAER</h2>
+
+        <p>
+          El primer álbum representa el inicio de este viaje. Sus canciones
+          exploran la despedida, el amor imposible, la pérdida, la ausencia,
+          la lucha interior y la transformación.
+        </p>
+
+        <p>
+          Más que una colección de canciones, Déjame Caer representa el momento
+          en que una idea que parecía imposible comenzó finalmente a convertirse
+          en una realidad.
+        </p>
+
+      </article>
+
+
+      <article class="chapter">
+
+        <div class="chapter-label">EL CAMINO CONTINÚA</div>
+
+        <h2>ESTO ES SOLO EL COMIENZO</h2>
+
+        <p>
+          Umbra Atra continúa creciendo canción tras canción. Nuevas historias,
+          nuevos álbumes y nuevos mundos forman parte de un camino creativo que
+          apenas comienza.
+        </p>
+
+        <p>
+          La música, las letras y las historias seguirán evolucionando, pero
+          el origen permanecerá siempre en el mismo lugar: una profunda pasión
+          por el rock y el metal, y el deseo de convertir esa pasión en algo propio.
+        </p>
+
+      </article>
+
+    </section>
+
+
+    <div class="back-container">
+
+      <a href="index.html" class="back-button">
+        VOLVER AL INICIO
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+    © 2026 Umbra Atra — Sitio Oficial
+  </footer>
+
+</body>
+</html>
