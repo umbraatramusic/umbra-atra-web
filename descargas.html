@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Descargas | Umbra Atra</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#090909;color:#fff;font-family:Arial,Helvetica,sans-serif}
+nav{position:sticky;top:0;z-index:1000;width:100%;background:rgba(9,9,9,.96);border-bottom:1px solid #222;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;gap:25px}
+.logo{color:#fff;text-decoration:none;font-weight:bold;letter-spacing:3px;font-size:1.1rem;white-space:nowrap}
+.menu{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:24px}
+.menu a{color:#cfcfcf;text-decoration:none;font-size:.9rem;font-weight:bold;letter-spacing:1px;transition:.3s}
+.menu a:hover{color:#d84b4b}
+.hero{text-align:center;padding:100px 25px 70px;background:linear-gradient(rgba(0,0,0,.65),rgba(9,9,9,.96))}
+.hero h1{font-size:clamp(3rem,7vw,5.5rem);letter-spacing:8px;margin-bottom:20px}
+.hero p{max-width:700px;margin:auto;color:#cfcfcf;font-size:1.1rem;line-height:1.8}
+.downloads{max-width:1150px;margin:0 auto;padding:70px 30px 90px;display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
+.download-card{display:flex;flex-direction:column;justify-content:center;min-height:260px;padding:45px;border:1px solid #333;background:rgba(255,255,255,.015);text-decoration:none;color:#fff;transition:.3s}
+.download-card:hover{border-color:#b30000;background:rgba(179,0,0,.08);transform:translateY(-4px)}
+.icon{font-size:2.5rem;margin-bottom:25px}
+.download-card h2{color:#d84b4b;letter-spacing:3px;font-size:1.35rem;margin-bottom:15px}
+.download-card p{color:#cfcfcf;line-height:1.7;font-size:1rem}
+.arrow{margin-top:28px;color:#fff;font-weight:bold;letter-spacing:2px;font-size:.85rem}
+footer{text-align:center;padding:35px 20px;color:#777;border-top:1px solid #222}
+@media(max-width:800px){
+nav{flex-direction:column}.menu{justify-content:center;gap:15px}.downloads{grid-template-columns:1fr;padding:50px 20px 70px}.download-card{min-height:220px;padding:35px}.hero h1{letter-spacing:4px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="index.html" class="logo">UMBRA ATRA</a>
+<div class="menu">
+<a href="index.html">INICIO</a>
+<a href="musica.html">MÚSICA</a>
+<a href="albumes.html">ÁLBUMES</a>
+<a href="significados.html">SIGNIFICADOS</a>
+<a href="letras.html">LETRAS</a>
+<a href="historia.html">HISTORIA</a>
+<a href="descargas.html">DESCARGAS</a>
+<a href="contacto.html">CONTACTO</a>
+</div>
+</nav>
+
+<header class="hero">
+<h1>DESCARGAS</h1>
+<p>Explora y descarga material visual oficial de Umbra Atra. Wallpapers, frases y arte para llevar el universo del proyecto a tus dispositivos.</p>
+</header>
+
+<main class="downloads">
+
+<a href="wallpapers-movil.html" class="download-card">
+<div class="icon">📱</div>
+<h2>WALLPAPERS PARA MÓVIL</h2>
+<p>Fondos verticales diseñados para teléfonos móviles.</p>
+<div class="arrow">EXPLORAR →</div>
+</a>
+
+<a href="wallpapers-pc.html" class="download-card">
+<div class="icon">🖥️</div>
+<h2>WALLPAPERS PARA PC</h2>
+<p>Fondos horizontales para computadoras y pantallas.</p>
+<div class="arrow">EXPLORAR →</div>
+</a>
+
+<a href="frases.html" class="download-card">
+<div class="icon">🖤</div>
+<h2>FRASES</h2>
+<p>Frases e imágenes inspiradas en las canciones y el universo de Umbra Atra.</p>
+<div class="arrow">EXPLORAR →</div>
+</a>
+
+<a href="arte.html" class="download-card">
+<div class="icon">🎨</div>
+<h2>ARTE</h2>
+<p>Una colección de arte visual oficial de Umbra Atra.</p>
+<div class="arrow">EXPLORAR →</div>
+</a>
+
+</main>
+
+<footer>© 2026 Umbra Atra — Sitio Oficial</footer>
+</body>
+</html>
