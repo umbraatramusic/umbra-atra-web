@@ -1,456 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Umbra Atra | Historia</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #090909;
-      color: #ffffff;
-      font-family: Arial, Helvetica, sans-serif;
-      min-height: 100vh;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image: url("photo_2026-07-21_09-00-03.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      filter: blur(8px);
-      transform: scale(1.05);
-      opacity: 0.22;
-      z-index: -2;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.72);
-      z-index: -1;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(9, 9, 9, 0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #222;
-      padding: 20px 30px;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .logo-menu {
-      font-size: 1.2rem;
-      font-weight: bold;
-      letter-spacing: 3px;
-      color: #ffffff;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 22px;
-    }
-
-    nav ul li a {
-      color: #d0d0d0;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      transition: 0.3s;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.active {
-      color: #b30000;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 80px 30px;
-    }
-
-    .page-title {
-      text-align: center;
-      margin-bottom: 70px;
-    }
-
-    .page-title h1 {
-      font-size: 3.5rem;
-      letter-spacing: 8px;
-      margin-bottom: 20px;
-    }
-
-    .page-title p {
-      max-width: 760px;
-      margin: auto;
-      color: #c7c7c7;
-      line-height: 1.8;
-      font-size: 1.05rem;
-    }
-
-    .history {
-      border-left: 2px solid #b30000;
-      padding-left: 35px;
-    }
-
-    .chapter {
-      margin-bottom: 55px;
-    }
-
-    .chapter-label {
-      color: #b30000;
-      font-size: 0.8rem;
-      font-weight: bold;
-      letter-spacing: 3px;
-      margin-bottom: 12px;
-    }
-
-    .chapter h2 {
-      font-size: 2rem;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-
-    .chapter p {
-      color: #d0d0d0;
-      font-size: 1.05rem;
-      line-height: 1.9;
-      margin-bottom: 18px;
-    }
-
-    .highlight {
-      border: 1px solid #333;
-      background: rgba(15, 15, 15, 0.78);
-      padding: 35px;
-      margin-top: 30px;
-    }
-
-    .highlight h3 {
-      color: #b30000;
-      letter-spacing: 2px;
-      margin-bottom: 18px;
-      font-size: 1.2rem;
-    }
-
-    .highlight p {
-      color: #c7c7c7;
-      line-height: 1.8;
-    }
-
-    .back-container {
-      text-align: center;
-      margin-top: 60px;
-    }
-
-    .back-button {
-      display: inline-block;
-      padding: 15px 35px;
-      border: 1px solid #b30000;
-      color: white;
-      text-decoration: none;
-      letter-spacing: 2px;
-      transition: 0.3s;
-    }
-
-    .back-button:hover {
-      background: #b30000;
-    }
-
-    footer {
-      text-align: center;
-      padding: 35px 20px;
-      color: #777;
-      border-top: 1px solid #222;
-      background: rgba(0, 0, 0, 0.45);
-    }
-
-    @media (max-width: 800px) {
-      .nav-container {
-        flex-direction: column;
-      }
-
-      nav ul {
-        justify-content: center;
-        gap: 15px;
-      }
-
-      main {
-        padding: 60px 20px;
-      }
-
-      .page-title h1 {
-        font-size: 2.5rem;
-        letter-spacing: 5px;
-      }
-
-      .history {
-        padding-left: 22px;
-      }
-
-      .chapter h2 {
-        font-size: 1.6rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbra Atra | Historia</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#090909;color:#fff;font-family:Arial,Helvetica,sans-serif;min-height:100vh}
+body::before{content:"";position:fixed;inset:0;background-image:url("photo_2026-07-21_09-00-03.jpg");background-size:cover;background-position:center;background-repeat:no-repeat;filter:blur(8px);transform:scale(1.05);opacity:.22;z-index:-2}
+body::after{content:"";position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:-1}
+nav{position:sticky;top:0;z-index:100;background:rgba(9,9,9,.92);backdrop-filter:blur(10px);border-bottom:1px solid #222;padding:20px 30px}
+.nav-container{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.logo-menu{font-size:1.2rem;font-weight:bold;letter-spacing:3px;color:#fff;text-decoration:none;white-space:nowrap}
+nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:22px}
+nav ul li a{color:#d0d0d0;text-decoration:none;font-size:.85rem;font-weight:bold;letter-spacing:1px;transition:.3s}
+nav ul li a:hover,nav ul li a.active{color:#b30000}
+main{max-width:1000px;margin:auto;padding:80px 30px}
+.page-title{text-align:center;margin-bottom:65px}
+.page-title h1{font-size:3.5rem;letter-spacing:8px;margin-bottom:22px}
+.page-title p{max-width:700px;margin:auto;color:#c7c7c7;line-height:1.8;font-size:1.08rem}
+.story-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-bottom:70px}
+.story-card{background:rgba(15,15,15,.88);border:1px solid #2b2b2b;cursor:pointer;text-align:left;padding:28px;transition:.3s;color:#fff;width:100%}
+.story-card:hover{border-color:#b30000;transform:translateY(-3px)}
+.story-card.active{border-color:#b30000;background:rgba(25,8,8,.92)}
+.card-number{display:block;color:#b30000;font-size:1.7rem;font-weight:bold;margin-bottom:18px;letter-spacing:2px}
+.card-title{display:block;font-size:1.05rem;font-weight:bold;letter-spacing:2px;margin-bottom:12px}
+.card-subtitle{display:block;color:#a8a8a8;font-size:.95rem;line-height:1.5}
+.card-symbol{display:block;text-align:right;margin-top:22px;color:#b30000;font-size:1.3rem;transition:.3s}
+.story-card.active .card-symbol{transform:rotate(45deg)}
+.story-content{display:none;background:rgba(10,10,10,.9);border-left:2px solid #b30000;padding:40px;margin-top:5px;margin-bottom:35px}
+.story-content.active{display:block;animation:fadeIn .4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.chapter-label{color:#b30000;font-size:.8rem;font-weight:bold;letter-spacing:3px;margin-bottom:15px}
+.story-content h2{font-size:2rem;letter-spacing:2px;margin-bottom:28px}
+.story-content p{color:#d0d0d0;font-size:1.05rem;line-height:1.9;margin-bottom:20px}
+.highlight{border:1px solid #333;background:rgba(15,15,15,.78);padding:30px;margin-top:30px}
+.highlight h3{color:#b30000;letter-spacing:2px;margin-bottom:18px;font-size:1.1rem}
+.highlight p{color:#c7c7c7;line-height:1.8;margin-bottom:0}
+.final-section{border-top:1px solid #292929;margin-top:50px;padding-top:65px;text-align:center}
+.final-section .chapter-label{margin-bottom:15px}
+.final-section h2{font-size:2.2rem;letter-spacing:3px;margin-bottom:25px}
+.final-section p{max-width:760px;margin:0 auto 18px;color:#c7c7c7;line-height:1.9;font-size:1.05rem}
+.back-container{text-align:center;margin-top:70px}
+.back-button{display:inline-block;padding:15px 35px;border:1px solid #b30000;color:#fff;text-decoration:none;letter-spacing:2px;transition:.3s}
+.back-button:hover{background:#b30000}
+footer{text-align:center;padding:35px 20px;color:#777;border-top:1px solid #222;background:rgba(0,0,0,.45)}
+@media(max-width:800px){.nav-container{flex-direction:column}nav ul{justify-content:center;gap:15px}main{padding:60px 20px}.page-title h1{font-size:2.5rem;letter-spacing:5px}.story-cards{grid-template-columns:1fr}.story-content{padding:28px 22px}.story-content h2{font-size:1.55rem}.final-section h2{font-size:1.8rem}}
+</style>
 </head>
-
 <body>
-
-  <nav>
-    <div class="nav-container">
-
-      <a href="index.html" class="logo-menu">UMBRA ATRA</a>
-
-      <ul>
-        <li><a href="index.html">INICIO</a></li>
-        <li><a href="musica.html">MÚSICA</a></li>
-        <li><a href="albumes.html">ÁLBUMES</a></li>
-        <li><a href="significados.html">SIGNIFICADOS</a></li>
-        <li><a href="letras.html">LETRAS</a></li>
-        <li><a href="historia.html" class="active">HISTORIA</a></li>
-        <li><a href="descargas.html">DESCARGAS</a></li>
-        <li><a href="contacto.html">CONTACTO</a></li>
-      </ul>
-
-    </div>
-  </nav>
-
-
-  <main>
-
-    <section class="page-title">
-
-      <article class="chapter">
-
-  <div class="chapter-label">01 — EL DETONANTE</div>
-
-  <h2>CUANDO UNA HISTORIA TERMINÓ</h2>
-
-  <p>
-    Durante los primeros meses de 2026 viví una relación que, con el paso del tiempo,
-    comenzó a convertirse en una fuente de desgaste emocional. Las constantes rupturas,
-    los conflictos y las dificultades que rodeaban aquella historia terminaron dejando
-    una sensación de cansancio mental y sentimental.
-  </p>
-
-  <p>
-    En junio decidí ponerle fin.
-  </p>
-
-  <p>
-    No fue una decisión tomada por falta de sentimientos, sino por la necesidad de
-    recuperar la tranquilidad después de una etapa que había terminado por agotarme
-    emocionalmente.
-  </p>
-
-  <p>
-    Al terminar aquella historia quedaron muchas emociones, pensamientos y experiencias
-    que necesitaban encontrar alguna forma de salir.
-  </p>
-
-  <p>
-    Sin saberlo todavía, ese final terminaría convirtiéndose en el comienzo de algo nuevo.
-  </p>
-
-</article>
-
-
-    <section class="history">
-
-      <article class="chapter">
-
-        <div class="chapter-label">EL ORIGEN</div>
-
-        <h2>UNA PASIÓN QUE VENÍA DE MUCHO TIEMPO</h2>
-
-        <p>
-          La historia de Umbra Atra comienza mucho antes de la primera canción.
-          Nace de una relación personal con el rock y el metal, géneros que
-          durante años despertaron una profunda fascinación por su fuerza,
-          sus melodías y su capacidad para contar historias.
-        </p>
-
-        <p>
-          La influencia llegó desde diferentes vertientes del rock y del metal,
-          tanto en inglés como en español, pero especialmente desde el metal
-          sinfónico y el metal gótico. La combinación de guitarras, orquestaciones,
-          voces poderosas y atmósferas oscuras fue construyendo poco a poco la
-          identidad musical que más adelante daría vida a Umbra Atra.
-        </p>
-
-      </article>
-
-
-      <article class="chapter">
-
-        <div class="chapter-label">UNA IDEA</div>
-
-        <h2>EL DESEO DE CREAR ALGO PROPIO</h2>
-
-        <p>
-          Durante mucho tiempo existió el deseo de crear música propia.
-          No solo escuchar las historias creadas por otros artistas, sino
-          construir un universo musical personal, escribir canciones y dar
-          forma a ideas que habían permanecido durante años en la imaginación.
-        </p>
-
-        <p>
-          Sin embargo, existía un obstáculo importante: no saber tocar un
-          instrumento musical. Lejos de significar el final de esa idea,
-          esa limitación terminó convirtiéndose en el punto de partida para
-          buscar una nueva manera de hacer realidad el proyecto.
-        </p>
-
-      </article>
-
-
-      <article class="chapter">
-
-        <div class="chapter-label">EL ENCUENTRO CON LA TECNOLOGÍA</div>
-
-        <h2>LA IA COMO HERRAMIENTA CREATIVA</h2>
-
-        <p>
-          La llegada de nuevas herramientas basadas en inteligencia artificial
-          abrió una posibilidad que antes parecía imposible. Por primera vez,
-          fue posible transformar ideas musicales en composiciones y comenzar
-          a explorar sonidos, arreglos y atmósferas sin necesidad de dominar
-          personalmente un instrumento.
-        </p>
-
-        <p>
-          La inteligencia artificial se convirtió entonces en una herramienta
-          dentro del proceso creativo de Umbra Atra, permitiendo experimentar
-          con sonidos y dar forma musical a una visión artística.
-        </p>
-
-        <div class="highlight">
-
-          <h3>LAS LETRAS NACEN DE UNA VOZ HUMANA</h3>
-
-          <p>
-            Aunque la inteligencia artificial forma parte del proceso de creación
-            musical, las letras de las canciones son escritas personalmente por
-            el creador del proyecto. Las historias, emociones, conceptos y
-            palabras que forman el corazón de las canciones nacen de una visión
-            humana y personal.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <article class="chapter">
-
-        <div class="chapter-label">EL NACIMIENTO DE UMBRA ATRA</div>
-
-        <h2>CONVERTIR IDEAS EN UN UNIVERSO MUSICAL</h2>
-
-        <p>
-          De esa combinación entre pasión por el rock y el metal, escritura,
-          imaginación y nuevas herramientas tecnológicas nació Umbra Atra.
-          El proyecto no pretende reemplazar la música tradicional, sino
-          utilizar nuevas posibilidades para hacer realidad una visión creativa
-          que de otra manera habría permanecido únicamente como una idea.
-        </p>
-
-        <p>
-          Umbra Atra es un espacio donde la oscuridad, las emociones y las
-          historias se transforman en música. Cada canción representa un capítulo
-          y cada álbum abre la puerta a un nuevo universo.
-        </p>
-
-      </article>
-
-
-      <article class="chapter">
-
-        <div class="chapter-label">EL PRIMER CAPÍTULO</div>
-
-        <h2>DÉJAME CAER</h2>
-
-        <p>
-          El primer álbum representa el inicio de este viaje. Sus canciones
-          exploran la despedida, el amor imposible, la pérdida, la ausencia,
-          la lucha interior y la transformación.
-        </p>
-
-        <p>
-          Más que una colección de canciones, Déjame Caer representa el momento
-          en que una idea que parecía imposible comenzó finalmente a convertirse
-          en una realidad.
-        </p>
-
-      </article>
-
-
-      <article class="chapter">
-
-        <div class="chapter-label">EL CAMINO CONTINÚA</div>
-
-        <h2>ESTO ES SOLO EL COMIENZO</h2>
-
-        <p>
-          Umbra Atra continúa creciendo canción tras canción. Nuevas historias,
-          nuevos álbumes y nuevos mundos forman parte de un camino creativo que
-          apenas comienza.
-        </p>
-
-        <p>
-          La música, las letras y las historias seguirán evolucionando, pero
-          el origen permanecerá siempre en el mismo lugar: una profunda pasión
-          por el rock y el metal, y el deseo de convertir esa pasión en algo propio.
-        </p>
-
-      </article>
-
-    </section>
-
-
-    <div class="back-container">
-
-      <a href="index.html" class="back-button">
-        VOLVER AL INICIO
-      </a>
-
-    </div>
-
-  </main>
-
-
-  <footer>
-    © 2026 Umbra Atra — Sitio Oficial
-  </footer>
-
+<nav><div class="nav-container">
+<a href="index.html" class="logo-menu">UMBRA ATRA</a>
+<ul>
+<li><a href="index.html">INICIO</a></li><li><a href="musica.html">MÚSICA</a></li><li><a href="albumes.html">ÁLBUMES</a></li><li><a href="significados.html">SIGNIFICADOS</a></li><li><a href="letras.html">LETRAS</a></li><li><a href="historia.html" class="active">HISTORIA</a></li><li><a href="descargas.html">DESCARGAS</a></li><li><a href="contacto.html">CONTACTO</a></li>
+</ul></div></nav>
+<main>
+<section class="page-title"><h1>MI HISTORIA</h1><p>A veces una historia no comienza cuando decides crear algo.<br>A veces comienza cuando algo termina.</p></section>
+<section class="story-cards">
+<button class="story-card" data-target="chapter-1" type="button"><span class="card-number">01</span><span class="card-title">EL DETONANTE</span><span class="card-subtitle">Cuando una historia terminó</span><span class="card-symbol">+</span></button>
+<button class="story-card" data-target="chapter-2" type="button"><span class="card-number">02</span><span class="card-title">LA INSPIRACIÓN</span><span class="card-subtitle">Cuando una canción despertó una idea</span><span class="card-symbol">+</span></button>
+<button class="story-card" data-target="chapter-3" type="button"><span class="card-number">03</span><span class="card-title">DÉJAME CAER</span><span class="card-subtitle">El comienzo de todo</span><span class="card-symbol">+</span></button>
+<button class="story-card" data-target="chapter-4" type="button"><span class="card-number">04</span><span class="card-title">LAS RAÍCES</span><span class="card-subtitle">Una pasión que venía de mucho tiempo</span><span class="card-symbol">+</span></button>
+<button class="story-card" data-target="chapter-5" type="button"><span class="card-number">05</span><span class="card-title">LA HERRAMIENTA</span><span class="card-subtitle">La IA como herramienta creativa</span><span class="card-symbol">+</span></button>
+<button class="story-card" data-target="chapter-6" type="button"><span class="card-number">06</span><span class="card-title">UMBRA ATRA</span><span class="card-subtitle">El nacimiento de un universo musical</span><span class="card-symbol">+</span></button>
+</section>
+<section class="story-content" id="chapter-1"><div class="chapter-label">01 — EL DETONANTE</div><h2>CUANDO UNA HISTORIA TERMINÓ</h2><p>Durante los primeros meses de 2026 viví una relación que, con el paso del tiempo, comenzó a convertirse en una fuente de desgaste emocional. Las constantes rupturas, los conflictos y las dificultades que rodeaban aquella historia terminaron dejando una sensación de cansancio mental y sentimental.</p><p>En junio decidí ponerle fin.</p><p>No fue una decisión tomada por falta de sentimientos, sino por la necesidad de recuperar la tranquilidad después de una etapa que había terminado por agotarme emocionalmente.</p><p>Al terminar aquella historia quedaron muchas emociones, pensamientos y experiencias que necesitaban encontrar alguna forma de salir.</p><p>Sin saberlo todavía, ese final terminaría convirtiéndose en el comienzo de algo nuevo.</p></section>
+<section class="story-content" id="chapter-2"><div class="chapter-label">02 — LA INSPIRACIÓN</div><h2>CUANDO UNA CANCIÓN DESPERTÓ UNA IDEA</h2><p>Después de terminar aquella relación, la música comenzó a acompañarme de una manera diferente. En medio de ese momento personal, descubrí una canción cuya atmósfera y forma de transmitir emociones despertaron algo en mí.</p><p>No se trataba de copiar lo que otro artista había creado ni de intentar reproducir una canción. Fue simplemente el momento en que comprendí que también podía intentar transformar mis propias emociones en una historia musical.</p><p>Una idea comenzó a tomar forma.</p><p>Por primera vez, algo que hasta entonces había permanecido únicamente como una posibilidad comenzó a sentirse real.</p></section>
+<section class="story-content" id="chapter-3"><div class="chapter-label">03 — EL COMIENZO</div><h2>DÉJAME CAER</h2><p>De aquel momento nació una idea que poco a poco se transformó en una letra. Las emociones que habían quedado después de una historia que terminó encontraron una nueva forma de expresarse.</p><p>Así nació “Déjame Caer”.</p><p>En ese momento no existía todavía Umbra Atra como proyecto. No había un universo musical, álbumes ni una identidad artística definida. Existía simplemente una canción y la necesidad de convertir una emoción personal en algo que pudiera trascender aquel momento.</p><p>Con el tiempo, aquella primera canción dejaría de estar sola.</p><p>Sin saberlo entonces, “Déjame Caer” se había convertido en el primer paso de un camino mucho más grande.</p></section>
+<section class="story-content" id="chapter-4"><div class="chapter-label">04 — LAS RAÍCES</div><h2>UNA PASIÓN QUE VENÍA DE MUCHO TIEMPO</h2><p>Sin embargo, la historia de Umbra Atra no comenzó realmente en aquel momento. Mucho antes de la primera canción existía una relación personal con el rock y el metal.</p><p>Durante años, estos géneros despertaron en mí una profunda fascinación por su fuerza, sus melodías y su capacidad para contar historias.</p><p>La influencia llegó desde diferentes vertientes del rock y del metal, tanto en inglés como en español, pero especialmente desde el metal sinfónico y el metal gótico.</p><p>La combinación de guitarras, orquestaciones, voces poderosas y atmósferas oscuras fue construyendo poco a poco una identidad musical que, con el tiempo, terminaría influyendo en el sonido y la esencia de Umbra Atra.</p></section>
+<section class="story-content" id="chapter-5"><div class="chapter-label">05 — LA HERRAMIENTA</div><h2>LA IA COMO HERRAMIENTA CREATIVA</h2><p>Durante mucho tiempo existió el deseo de crear música propia. No solo escuchar las historias creadas por otros artistas, sino construir un universo musical personal, escribir canciones y dar forma a ideas que habían permanecido durante años en la imaginación.</p><p>Sin embargo, existía un obstáculo importante: no saber tocar un instrumento musical.</p><p>La llegada de nuevas herramientas basadas en inteligencia artificial abrió una posibilidad diferente. Por primera vez, fue posible transformar ideas musicales en composiciones y comenzar a explorar sonidos, arreglos y atmósferas sin necesidad de dominar personalmente un instrumento.</p><p>La inteligencia artificial se convirtió entonces en una herramienta dentro del proceso creativo, permitiendo experimentar con sonidos y dar forma musical a una visión artística.</p><div class="highlight"><h3>LAS LETRAS NACEN DE UNA VOZ HUMANA</h3><p>Aunque la inteligencia artificial forma parte del proceso de creación musical, las letras de las canciones son escritas personalmente por el creador del proyecto. Las historias, emociones, conceptos y palabras que forman el corazón de las canciones nacen de una visión humana y personal.</p></div></section>
+<section class="story-content" id="chapter-6"><div class="chapter-label">06 — UMBRA ATRA</div><h2>EL NACIMIENTO DE UN UNIVERSO MUSICAL</h2><p>De la combinación entre una pasión que llevaba años creciendo, una experiencia personal, la escritura, la imaginación y nuevas herramientas tecnológicas comenzó a tomar forma algo que ya era mucho más que una sola canción.</p><p>Así nació Umbra Atra.</p><p>Lo que había comenzado con una emoción y una letra empezó a convertirse en un proyecto musical. Nuevas canciones, historias, conceptos e ideas fueron construyendo poco a poco un universo propio.</p><p>Umbra Atra es un espacio donde la oscuridad, las emociones y las historias se transforman en música. Cada canción representa un capítulo y cada álbum abre la puerta a un nuevo universo.</p></section>
+<section class="final-section"><div class="chapter-label">EL CAMINO CONTINÚA</div><h2>ESTO ES SOLO EL COMIENZO</h2><p>Umbra Atra continúa creciendo canción tras canción. Nuevas historias, nuevos álbumes y nuevos mundos forman parte de un camino creativo que apenas comienza.</p><p>La música, las letras y las historias seguirán evolucionando, pero el origen permanecerá siempre en el mismo lugar: una profunda pasión por el rock y el metal, el deseo de crear algo propio y una canción que, sin saberlo, terminó convirtiéndose en el comienzo de todo.</p></section>
+<div class="back-container"><a href="index.html" class="back-button">VOLVER AL INICIO</a></div>
+</main>
+<footer>© 2026 Umbra Atra — Sitio Oficial</footer>
+<script>
+const cards=document.querySelectorAll(".story-card");
+const contents=document.querySelectorAll(".story-content");
+cards.forEach(card=>{card.addEventListener("click",()=>{const targetContent=document.getElementById(card.dataset.target);const isAlreadyOpen=card.classList.contains("active");cards.forEach(item=>item.classList.remove("active"));contents.forEach(content=>content.classList.remove("active"));if(!isAlreadyOpen){card.classList.add("active");targetContent.classList.add("active");setTimeout(()=>{targetContent.scrollIntoView({behavior:"smooth",block:"start"})},150)}})});
+</script>
 </body>
 </html>
