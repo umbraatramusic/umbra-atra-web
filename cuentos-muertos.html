@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cuentos Muertos | Umbra Atra</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #090909;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("photo_2026-07-21_09-00-03.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(8px);
+      transform: scale(1.05);
+      opacity: 0.22;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: -1;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 9, 9, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+      padding: 20px 30px;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo-menu {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #ffffff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 22px;
+    }
+
+    nav ul li a {
+      color: #d0d0d0;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #b30000;
+    }
+
+    main {
+      max-width: 950px;
+      margin: auto;
+      padding: 80px 30px;
+    }
+
+    .song-header {
+      text-align: center;
+      margin-bottom: 65px;
+    }
+
+    .song-number {
+      color: #b30000;
+      font-size: 0.9rem;
+      font-weight: bold;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    .song-header h1 {
+      font-size: 4rem;
+      letter-spacing: 7px;
+      margin-bottom: 18px;
+    }
+
+    .album-name {
+      color: #b8b8b8;
+      letter-spacing: 3px;
+      font-size: 0.95rem;
+    }
+
+    .content-section {
+      border: 1px solid #333;
+      background: rgba(15, 15, 15, 0.78);
+      padding: 40px;
+      margin-bottom: 30px;
+    }
+
+    .content-section h2 {
+      color: #b30000;
+      font-size: 1.3rem;
+      letter-spacing: 3px;
+      margin-bottom: 25px;
+    }
+
+    .content-section p {
+      color: #d0d0d0;
+      line-height: 1.9;
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+    }
+
+    .listen-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .listen-button {
+      display: block;
+      padding: 16px 18px;
+      border: 1px solid #b30000;
+      color: #ffffff;
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .listen-button:hover {
+      background: #b30000;
+    }
+
+    .lyrics {
+      white-space: pre-line;
+      color: #d0d0d0;
+      line-height: 2;
+      font-size: 1.05rem;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .nav-button {
+      display: inline-block;
+      padding: 15px 25px;
+      border: 1px solid #b30000;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .nav-button:hover {
+      background: #b30000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #777;
+      border-top: 1px solid #222;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    @media (max-width: 800px) {
+
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      main {
+        padding: 60px 20px;
+      }
+
+      .song-header h1 {
+        font-size: 2.6rem;
+        letter-spacing: 4px;
+      }
+
+      .content-section {
+        padding: 25px;
+      }
+
+      .listen-buttons {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation {
+        flex-direction: column;
+      }
+
+      .nav-button {
+        text-align: center;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-container">
+
+      <a href="index.html" class="logo-menu">UMBRA ATRA</a>
+
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="musica.html">MÚSICA</a></li>
+        <li><a href="albumes.html">ÁLBUMES</a></li>
+        <li><a href="significados.html">SIGNIFICADOS</a></li>
+        <li><a href="letras.html">LETRAS</a></li>
+        <li><a href="historia.html">HISTORIA</a></li>
+        <li><a href="descargas.html">DESCARGAS</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <main>
+
+    <header class="song-header">
+
+      <div class="song-number">
+        CANCIÓN 02
+      </div>
+
+      <h1>CUENTOS MUERTOS</h1>
+
+      <div class="album-name">
+        ÁLBUM: MARIONETA DE SANGRE
+      </div>
+
+    </header>
+
+
+    <section class="content-section">
+
+      <h2>LA CANCIÓN</h2>
+
+      <p>
+        Cuentos Muertos representa la caída de los cuentos de hadas.
+        Después del nacimiento de la leyenda, el mundo comienza a
+        descubrir que las historias que alguna vez estuvieron llenas
+        de esperanza ya no tienen finales felices.
+      </p>
+
+      <p>
+        Las princesas desaparecen, los castillos quedan en silencio
+        y las promesas de amor se convierten en recuerdos. La canción
+        representa el momento en que la fantasía comienza a morir y
+        nadie sabe ya cómo volver a creer.
+      </p>
+
+
+      <div class="listen-buttons">
+
+        <a href="https://open.spotify.com/intl-es/track/47rG6ZDSMo45KIdOx5Y2Kr?si=586a1841f68a4be3"
+           target="_blank"
+           rel="noopener"
+           class="listen-button">
+          ESCUCHAR EN SPOTIFY
+        </a>
+
+        <a href="https://youtu.be/Qyqp9NxvyZk?si=p4UZaVfv4UoYUof_"
+           target="_blank"
+           rel="noopener"
+           class="listen-button">
+          VER EN YOUTUBE
+        </a>
+
+        <a href="https://music.apple.com/us/song/los-cuentos-muertos/6803383481"
+           target="_blank"
+           rel="noopener"
+           class="listen-button">
+          ESCUCHAR EN APPLE MUSIC
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <section class="content-section">
+
+      <h2>SIGNIFICADO</h2>
+
+      <p>
+        Los Cuentos Muertos representa la caída de los cuentos de
+        hadas. Las princesas empiezan a desaparecer y las historias
+        que antes hablaban de esperanza se convierten en tragedias.
+      </p>
+
+      <p>
+        Los castillos quedan en silencio y los finales felices dejan
+        de existir. Es el momento en que el mundo comprende que el
+        amor y la fantasía de los cuentos están siendo destruidos.
+      </p>
+
+      <p>
+        Dentro de la historia de Marioneta de Sangre, esta canción
+        representa la transformación de un mundo que alguna vez creyó
+        en el amor. Los sueños, las promesas y los finales felices
+        comienzan a convertirse en cenizas.
+      </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+      <h2>LETRA</h2>
+
+      <div class="lyrics">
+Cierra los ojos
+No queda nadie
+Para escribir
+El final
+
+Las rosas rezan sobre el umbral
+La lluvia escribe su funeral
+El viento rompe cada ilusión
+Dejando astillas en el corazón
+
+La Luna cose la oscuridad
+Con hilos fríos de eternidad
+Las torres besan la soledad
+Ningún cuento va a despertar
+
+Ya no hay promesas que abrazar
+Solo cenizas sobre el mar
+
+Los cuentos muertos vuelven a arder
+Nadie recuerda cómo creer
+Cada por siempre se hizo papel
+Que el viento volvió a romper
+
+Los cuentos muertos lloran sin voz
+La noche aprendió a decir adiós
+Si el amor cayó una vez
+¿Quién volverá a creer?
+
+Un viejo reloj dejó de sonar
+La arena olvidó regresar
+Cristales rotos bajo la piel
+Dibujan sombras sobre el laurel
+
+El bosque esconde la última flor
+El mal devora su resplandor
+Mil hojas caen alrededor sin un color
+
+¿Dónde se fue la eternidad?
+¿Quién apagó la claridad?
+Solo el silencio responderá
+
+Caen los sueños
+Mueren los besos
+Calla el cielo
+Y hasta las estrellas olvidan el fuego
+
+Los cuentos muertos vuelven a arder
+Nadie recuerda cómo creer
+El último beso dejó de volver
+Como un invierno sobre la piel
+
+Los cuentos muertos duermen aquí
+Bajo las ramas de un viejo jardín
+Si alguna vez vuelve el amor
+Que nunca me encuentre a mí
+
+Érase una vez
+El último final
+      </div>
+
+    </section>
+
+
+    <div class="navigation">
+
+      <a href="albumes.html" class="nav-button">
+        ← VOLVER A ÁLBUMES
+      </a>
+
+      <a href="el-corazon-de-madera.html" class="nav-button">
+        SIGUIENTE CANCIÓN →
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+    © 2026 Umbra Atra — Sitio Oficial
+  </footer>
+
+</body>
+</html>
