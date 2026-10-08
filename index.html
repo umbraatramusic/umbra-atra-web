@@ -2,18 +2,27 @@
 <html lang="es">
 
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5JYQG5ZQLR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-5JYQG5ZQLR');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5JYQG5ZQLR"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-5JYQG5ZQLR');
+  </script>
+
   <meta charset="UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Umbra Atra — Sitio Oficial. Música, historias y sombras. Symphonic Gothic Metal.">
 
   <title>Umbra Atra | Sitio Oficial</title>
 
@@ -26,453 +35,667 @@
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
-      background: #090909;
+      background: #050505;
       color: #ffffff;
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
       overflow-x: hidden;
     }
 
+
     a {
       color: inherit;
       text-decoration: none;
     }
 
-    /* MENÚ SUPERIOR */
+
+    /* =========================
+       MENÚ
+    ========================= */
 
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       padding: 18px 7%;
-      background: rgba(5, 5, 5, 0.92);
-      backdrop-filter: blur(10px);
+
+      background: rgba(5, 5, 5, 0.94);
+
+      backdrop-filter: blur(12px);
+
       border-bottom: 1px solid #252525;
+
       z-index: 1000;
     }
+
 
     .nav-logo {
       font-size: 1rem;
       font-weight: bold;
       letter-spacing: 3px;
+      white-space: nowrap;
     }
+
 
     .nav-links {
       display: flex;
       align-items: center;
       justify-content: center;
+
       gap: 20px;
+
       list-style: none;
     }
+
 
     .nav-links a {
       color: #c7c7c7;
+
       font-size: 0.78rem;
+
       letter-spacing: 1px;
+
       transition: 0.3s;
     }
 
+
     .nav-links a:hover {
-      color: #c40000;
+      color: #d00000;
     }
 
-    /* INICIO / PORTADA PRINCIPAL */
 
-    header {
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
       position: relative;
+
       min-height: 100vh;
+
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+
       align-items: center;
-      padding: 130px 30px 80px;
+
+      justify-content: center;
+
       text-align: center;
+
       overflow: hidden;
+
+      padding: 120px 30px 80px;
     }
 
-    header::before {
+
+    .hero::before {
       content: "";
+
       position: absolute;
+
       inset: 0;
-      background-image: url("photo_2026-07-21_09-00-03.jpg");
+
+      background-image: url("umbra-atra-home.png");
+
       background-size: cover;
+
       background-position: center;
+
       background-repeat: no-repeat;
-      filter: blur(8px);
-      transform: scale(1.08);
-      opacity: 0.35;
+
       z-index: 0;
     }
 
-    header::after {
+
+    .hero::after {
       content: "";
+
       position: absolute;
+
       inset: 0;
-      background: radial-gradient(
-        circle,
-        rgba(0, 0, 0, 0.20),
-        rgba(0, 0, 0, 0.90)
-      );
-      z-index: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,0.45),
+          rgba(0,0,0,0.12) 45%,
+          rgba(0,0,0,0.78)
+        );
+
+      z-index: 1;
     }
+
 
     .hero-content {
       position: relative;
-      z-index: 1;
-      max-width: 900px;
+
+      z-index: 2;
+
+      max-width: 950px;
+
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
     }
 
-    h1 {
-      font-size: 5rem;
+
+    .hero-title {
+      font-size: clamp(3.2rem, 8vw, 6.5rem);
+
       letter-spacing: 12px;
-      margin-bottom: 20px;
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.12);
+
+      font-weight: 700;
+
+      margin-bottom: 18px;
+
+      text-shadow:
+        0 0 20px rgba(0,0,0,0.9),
+        0 0 45px rgba(0,0,0,0.8);
     }
 
-    .subtitle {
-      color: #c8c8c8;
-      font-size: 1.2rem;
-      letter-spacing: 4px;
-      margin-bottom: 35px;
-    }
 
-    .description {
-      max-width: 750px;
-      color: #dddddd;
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 16px 35px;
-      border: 1px solid #b30000;
+    .hero-tagline {
       color: #ffffff;
-      font-size: 0.85rem;
+
+      font-size: clamp(0.85rem, 2vw, 1.2rem);
+
+      letter-spacing: 5px;
+
+      margin-bottom: 22px;
+
+      text-shadow:
+        0 0 15px #000,
+        0 0 25px #000;
+    }
+
+
+    .hero-divider {
+      width: 180px;
+
+      height: 1px;
+
+      background: #b30000;
+
+      margin: 5px auto 22px;
+
+      box-shadow: 0 0 12px rgba(179,0,0,0.7);
+    }
+
+
+    .hero-subtitle {
+      color: #ffffff;
+
+      font-size: 1rem;
+
+      letter-spacing: 5px;
+
+      margin-bottom: 35px;
+
+      text-shadow: 0 0 15px #000;
+    }
+
+
+    .hero-button {
+      display: inline-block;
+
+      padding: 17px 38px;
+
+      border: 1px solid #d00000;
+
+      background: rgba(0,0,0,0.42);
+
+      color: #ffffff;
+
+      font-size: 0.82rem;
+
       font-weight: bold;
+
       letter-spacing: 2px;
+
       transition: 0.3s;
     }
 
-    .button:hover {
+
+    .hero-button:hover {
       background: #b30000;
-      box-shadow: 0 0 25px rgba(179, 0, 0, 0.45);
+
+      box-shadow:
+        0 0 25px rgba(179,0,0,0.55);
+
       transform: translateY(-3px);
     }
 
-    /* SECCIONES GENERALES */
 
-    section {
-      padding: 100px 10%;
-      border-top: 1px solid #1d1d1d;
+    /* =========================
+       ÁLBUM DESTACADO
+    ========================= */
+
+    .featured-album {
+      position: relative;
+
+      padding: 100px 8%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #100707,
+          #080808 55%,
+          #120707
+        );
+
+      border-top: 1px solid #292929;
+
+      overflow: hidden;
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
+
+    .featured-album::before {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+
+      height: 500px;
+
+      background: rgba(150,0,0,0.12);
+
+      filter: blur(100px);
+
+      border-radius: 50%;
+
+      left: -200px;
+
+      top: 20px;
+    }
+
+
+    .featured-container {
+      position: relative;
+
+      z-index: 1;
+
+      max-width: 1200px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: 1.1fr 0.9fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+
+    .album-label {
+      color: #c40000;
+
+      font-size: 0.82rem;
+
       letter-spacing: 5px;
-      margin-bottom: 20px;
-    }
 
-    .section-subtitle {
-      max-width: 800px;
-      margin: 0 auto 60px;
-      text-align: center;
-      color: #9f9f9f;
-      line-height: 1.8;
-    }
-
-    /* LA MÚSICA */
-
-    #musica {
-      background: linear-gradient(180deg, #0b0b0b, #111111);
-    }
-
-    .music-intro {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-      color: #cccccc;
-      line-height: 1.9;
-    }
-
-    .music-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 40px;
-    }
-
-    .platform-button {
-      padding: 14px 25px;
-      border: 1px solid #303030;
-      color: #ffffff;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      transition: 0.3s;
-    }
-
-    .platform-button:hover {
-      border-color: #b30000;
-      color: #e00000;
-    }
-
-    /* ÁLBUMES */
-
-    #albumes {
-      background: #090909;
-    }
-
-    .albums-grid {
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .album-card {
-      background: linear-gradient(145deg, #141414, #0b0b0b);
-      border: 1px solid #292929;
-      padding: 45px 35px;
-      text-align: center;
-      transition: 0.4s;
-    }
-
-    .album-card:hover {
-      transform: translateY(-8px);
-      border-color: #b30000;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.65);
-    }
-
-    .album-status {
-      color: #b30000;
-      font-size: 0.75rem;
-      letter-spacing: 3px;
       margin-bottom: 15px;
+
+      font-weight: bold;
     }
 
-    .album-name {
-      font-size: 2rem;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
-    }
 
-    .album-text {
-      color: #aaaaaa;
-      line-height: 1.8;
-      margin-bottom: 30px;
-    }
+    .featured-title {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
 
-    .album-link {
-      display: inline-block;
-      border-bottom: 1px solid #b30000;
-      padding-bottom: 8px;
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      transition: 0.3s;
-    }
-
-    .album-link:hover {
-      color: #e00000;
-    }
-
-    /* HISTORIAS Y SIGNIFICADOS */
-
-    #significados {
-      background: linear-gradient(135deg, #100d0d, #090909);
-    }
-
-    .meaning-container {
-      max-width: 950px;
-      margin: auto;
-    }
-
-    .meaning-album-title {
-      text-align: center;
-      color: #b30000;
-      font-size: 1.2rem;
       letter-spacing: 4px;
-      margin-bottom: 35px;
+
+      line-height: 1.05;
+
+      margin-bottom: 18px;
     }
 
-    .meaning-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
 
-    .meaning-card {
-      background: rgba(20, 20, 20, 0.9);
-      border: 1px solid #292929;
-      padding: 25px;
-      transition: 0.3s;
-    }
-
-    .meaning-card:hover {
-      border-color: #b30000;
-      transform: translateY(-4px);
-    }
-
-    .meaning-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-    }
-
-    .meaning-card p {
-      color: #999999;
-      font-size: 0.9rem;
-      line-height: 1.7;
-    }
-
-    /* LETRAS */
-
-    #letras {
-      background: #0c0c0c;
-    }
-
-    .lyrics-container {
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .lyrics-album-title {
-      text-align: center;
-      color: #b30000;
-      font-size: 1.1rem;
-      letter-spacing: 3px;
-      margin-bottom: 35px;
-    }
-
-    .lyrics-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 15px;
-    }
-
-    .lyrics-list li a {
-      display: block;
-      padding: 18px 20px;
-      background: #151515;
-      border-left: 2px solid #292929;
-      color: #cccccc;
-      transition: 0.3s;
-    }
-
-    .lyrics-list li a:hover {
-      border-left-color: #b30000;
-      background: #1b1b1b;
+    .featured-subtitle {
       color: #ffffff;
-    }
 
-    /* HISTORIA DE UMBRA ATRA */
-
-    #historia {
-      background: linear-gradient(180deg, #111111, #090909);
-    }
-
-    .history-content {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-      color: #c7c7c7;
-      line-height: 1.9;
       font-size: 1.05rem;
-    }
 
-    .history-content p {
+      letter-spacing: 4px;
+
       margin-bottom: 25px;
     }
 
-    /* CONTACTO Y REDES */
 
-    #contacto {
-      background: #080808;
-      text-align: center;
+    .featured-text {
+      color: #bdbdbd;
+
+      max-width: 650px;
+
+      font-size: 1rem;
+
+      line-height: 1.9;
+
+      margin-bottom: 32px;
     }
 
-    .social-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 40px;
-    }
 
-    .social-link {
-      min-width: 130px;
-      padding: 15px 20px;
-      border: 1px solid #292929;
+    .album-button {
+      display: inline-block;
+
+      padding: 16px 28px;
+
+      border: 1px solid #b30000;
+
+      color: #ffffff;
+
       font-size: 0.8rem;
-      letter-spacing: 1px;
+
+      font-weight: bold;
+
+      letter-spacing: 2px;
+
       transition: 0.3s;
     }
 
+
+    .album-button:hover {
+      background: #b30000;
+
+      box-shadow:
+        0 0 25px rgba(179,0,0,0.4);
+    }
+
+
+    .album-cover-wrapper {
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+    }
+
+
+    .album-cover {
+      width: min(100%, 430px);
+
+      display: block;
+
+      border: 1px solid #3b3b3b;
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.8);
+
+      transition: 0.4s;
+    }
+
+
+    .album-cover:hover {
+      transform: translateY(-8px);
+
+      border-color: #b30000;
+
+      box-shadow:
+        0 25px 70px rgba(120,0,0,0.35);
+    }
+
+
+    /* =========================
+       BLOQUE MUSICAL
+    ========================= */
+
+    .music-section {
+      padding: 90px 8%;
+
+      background: #090909;
+
+      border-top: 1px solid #1d1d1d;
+
+      text-align: center;
+    }
+
+
+    .section-title {
+      font-size: 2.4rem;
+
+      letter-spacing: 5px;
+
+      margin-bottom: 18px;
+    }
+
+
+    .section-text {
+      max-width: 780px;
+
+      margin: auto;
+
+      color: #a9a9a9;
+
+      line-height: 1.9;
+    }
+
+
+    .music-button {
+      display: inline-block;
+
+      margin-top: 35px;
+
+      padding: 15px 32px;
+
+      border: 1px solid #333;
+
+      color: #ffffff;
+
+      font-size: 0.8rem;
+
+      letter-spacing: 2px;
+
+      transition: 0.3s;
+    }
+
+
+    .music-button:hover {
+      border-color: #b30000;
+
+      background: #150000;
+    }
+
+
+    /* =========================
+       CONTACTO
+    ========================= */
+
+    .contact-section {
+      padding: 90px 8%;
+
+      background: #070707;
+
+      border-top: 1px solid #1d1d1d;
+
+      text-align: center;
+    }
+
+
+    .social-links {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 15px;
+
+      margin-top: 35px;
+    }
+
+
+    .social-link {
+      min-width: 130px;
+
+      padding: 14px 20px;
+
+      border: 1px solid #292929;
+
+      font-size: 0.78rem;
+
+      letter-spacing: 1px;
+
+      transition: 0.3s;
+    }
+
+
     .social-link:hover {
       border-color: #b30000;
+
       background: #180000;
     }
 
-    /* FOOTER */
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       text-align: center;
+
       padding: 35px 20px;
+
       background: #050505;
+
       color: #666666;
+
       border-top: 1px solid #202020;
+
       font-size: 0.8rem;
     }
 
-    /* VERSIÓN MÓVIL */
+
+    /* =========================
+       MÓVIL
+    ========================= */
 
     @media (max-width: 850px) {
 
       nav {
         padding: 15px 5%;
+
         flex-direction: column;
+
         gap: 12px;
       }
 
+
       .nav-links {
         flex-wrap: wrap;
-        gap: 10px 15px;
+
+        gap: 9px 14px;
       }
+
 
       .nav-links a {
-        font-size: 0.68rem;
+        font-size: 0.66rem;
       }
 
-      h1 {
-        font-size: 3rem;
-        letter-spacing: 6px;
+
+      .hero {
+        min-height: 88vh;
+
+        padding: 130px 20px 70px;
       }
 
-      .subtitle {
-        font-size: 0.85rem;
-        letter-spacing: 2px;
+
+      .hero::before {
+        background-position: 58% center;
       }
 
-      .section-title {
-        font-size: 2rem;
+
+      .hero-title {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+
+        letter-spacing: 5px;
+      }
+
+
+      .hero-tagline {
+        font-size: 0.78rem;
+
         letter-spacing: 3px;
       }
 
-      section {
-        padding: 80px 7%;
+
+      .hero-subtitle {
+        font-size: 0.78rem;
+
+        letter-spacing: 3px;
+      }
+
+
+      .hero-button {
+        padding: 15px 25px;
+      }
+
+
+      .featured-album {
+        padding: 75px 7%;
+      }
+
+
+      .featured-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        text-align: center;
+      }
+
+
+      .featured-text {
+        margin-left: auto;
+
+        margin-right: auto;
+      }
+
+
+      .featured-title {
+        font-size: 2.5rem;
+
+        letter-spacing: 2px;
+      }
+
+
+      .featured-subtitle {
+        font-size: 0.85rem;
+
+        letter-spacing: 2px;
+      }
+
+
+      .album-cover {
+        width: min(100%, 360px);
+      }
+
+
+      .music-section,
+      .contact-section {
+        padding: 75px 7%;
+      }
+
+
+      .section-title {
+        font-size: 2rem;
+
+        letter-spacing: 3px;
       }
 
     }
@@ -485,49 +708,85 @@
 <body>
 
 
-  <!-- MENÚ -->
+  <!-- =========================
+       MENÚ
+  ========================= -->
 
   <nav>
 
-    <a href="#inicio" class="nav-logo">
+    <a href="index.html" class="nav-logo">
       UMBRA ATRA
     </a>
 
+
     <ul class="nav-links">
 
-      <li><a href="index.html">INICIO</a></li>
-<li><a href="musica.html">MÚSICA</a></li>
-<li><a href="albumes.html">ÁLBUMES</a></li>
-<li><a href="significados.html">SIGNIFICADOS</a></li>
-<li><a href="letras.html">LETRAS</a></li>
-<li><a href="historia.html">HISTORIA</a></li>
-<li><a href="descargas.html">DESCARGAS</a></li>
-<li><a href="contacto.html">CONTACTO</a></li>
+      <li>
+        <a href="index.html">INICIO</a>
+      </li>
+
+      <li>
+        <a href="musica.html">MÚSICA</a>
+      </li>
+
+      <li>
+        <a href="albumes.html">ÁLBUMES</a>
+      </li>
+
+      <li>
+        <a href="significados.html">SIGNIFICADOS</a>
+      </li>
+
+      <li>
+        <a href="letras.html">LETRAS</a>
+      </li>
+
+      <li>
+        <a href="historia.html">HISTORIA</a>
+      </li>
+
+      <li>
+        <a href="descargas.html">DESCARGAS</a>
+      </li>
+
+      <li>
+        <a href="contacto.html">CONTACTO</a>
+      </li>
+
     </ul>
 
   </nav>
 
 
-  <!-- INICIO -->
 
-  <header id="inicio">
+  <!-- =========================
+       HERO PRINCIPAL
+  ========================= -->
+
+  <header class="hero">
 
     <div class="hero-content">
 
-      <h1>UMBRA ATRA</h1>
+      <h1 class="hero-title">
+        UMBRA ATRA
+      </h1>
 
-      <div class="subtitle">
-        SYMPHONIC • GOTHIC • METAL
+
+      <div class="hero-tagline">
+        DONDE LA OSCURIDAD CUENTA HISTORIAS
       </div>
 
-      <p class="description">
-        Bienvenidos al sitio oficial de Umbra Atra.
-        Un universo donde la oscuridad, la música sinfónica
-        y el metal se unen para contar historias.
-      </p>
 
-      <a href="albumes.html" class="button">
-        DESCUBRIR LA MÚSICA
+      <div class="hero-divider"></div>
+
+
+      <div class="hero-subtitle">
+        MÚSICA • HISTORIAS • SOMBRAS
+      </div>
+
+
+      <a href="musica.html" class="hero-button">
+        DESCUBRIR LA MÚSICA →
       </a>
 
     </div>
@@ -535,36 +794,162 @@
   </header>
 
 
-  <!-- CONTACTO Y REDES -->
 
-  <section id="contacto">
+  <!-- =========================
+       MARIONETA DE SANGRE
+  ========================= -->
 
-    <h2 class="section-title">
-      CONTACTO Y REDES
-    </h2>
+  <section class="featured-album">
 
-    <p class="section-subtitle">
-      Sigue a Umbra Atra y descubre
-      nuevas canciones, historias
-      y próximos lanzamientos.
-    </p>
+    <div class="featured-container">
 
-    <div class="social-links">
 
-      <a href="https://youtube.com/@umbraatra?si=UvU23WUsGftP4q-v" target="_blank" rel="noopener" class="social-link">YOUTUBE</a>
-      <a href="https://www.instagram.com/umbraatraoficial?igsi=bzV6Ymh6OXpscTVw" target="_blank" rel="noopener" class="social-link">INSTAGRAM</a>
-      <a href="https://www.facebook.com/share/1DNUQCYyLJ/" class="social-link">FACEBOOK</a>
-      <a href="https://www.tiktok.com/@umbra.atra?_r=1&_t=ZS-99QS5PHtiza" target="_blank" rel="noopener" class="social-link">TIKTOK</a>
+      <div class="featured-info">
+
+        <div class="album-label">
+          SEGUNDO ÁLBUM
+        </div>
+
+
+        <h2 class="featured-title">
+          MARIONETA DE SANGRE
+        </h2>
+
+
+        <div class="featured-subtitle">
+          EL SEGUNDO CAPÍTULO YA COMENZÓ
+        </div>
+
+
+        <p class="featured-text">
+          Un viaje oscuro a un mundo donde los cuentos de hadas
+          ya no tienen finales felices. La marioneta despierta
+          y las historias cambian para siempre.
+        </p>
+
+
+        <a href="marioneta-de-sangre.html" class="album-button">
+          ESCUCHAR MARIONETA DE SANGRE →
+        </a>
+
+      </div>
+
+
+      <div class="album-cover-wrapper">
+
+        <a href="marioneta-de-sangre.html">
+
+          <img
+            src="Album 2.png"
+            alt="Portada del álbum Marioneta de Sangre"
+            class="album-cover"
+          >
+
+        </a>
+
+      </div>
+
 
     </div>
 
   </section>
 
 
-  <!-- PIE DE PÁGINA -->
+
+  <!-- =========================
+       MÚSICA
+  ========================= -->
+
+  <section class="music-section">
+
+    <h2 class="section-title">
+      EL UNIVERSO DE UMBRA ATRA
+    </h2>
+
+
+    <p class="section-text">
+      Música sinfónica, metal gótico, historias oscuras y personajes
+      que habitan un universo donde cada canción representa un capítulo.
+      Explora los álbumes, las letras y los significados detrás de cada historia.
+    </p>
+
+
+    <a href="musica.html" class="music-button">
+      EXPLORAR MÚSICA →
+    </a>
+
+  </section>
+
+
+
+  <!-- =========================
+       CONTACTO Y REDES
+  ========================= -->
+
+  <section class="contact-section">
+
+    <h2 class="section-title">
+      CONTACTO Y REDES
+    </h2>
+
+
+    <p class="section-text">
+      Sigue a Umbra Atra y descubre nuevas canciones,
+      historias y próximos lanzamientos.
+    </p>
+
+
+    <div class="social-links">
+
+      <a
+        href="https://youtube.com/@umbraatra?si=UvU23WUsGftP4q-v"
+        target="_blank"
+        rel="noopener"
+        class="social-link">
+        YOUTUBE
+      </a>
+
+
+      <a
+        href="https://www.instagram.com/umbraatraoficial?igsi=bzV6Ymh6OXpscTVw"
+        target="_blank"
+        rel="noopener"
+        class="social-link">
+        INSTAGRAM
+      </a>
+
+
+      <a
+        href="https://www.facebook.com/share/1DNUQCYyLJ/"
+        target="_blank"
+        rel="noopener"
+        class="social-link">
+        FACEBOOK
+      </a>
+
+
+      <a
+        href="https://www.tiktok.com/@umbra.atra?_r=1&_t=ZS-99QS5PHtiza"
+        target="_blank"
+        rel="noopener"
+        class="social-link">
+        TIKTOK
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
+
     © 2026 Umbra Atra — Sitio Oficial
+
   </footer>
 
 
