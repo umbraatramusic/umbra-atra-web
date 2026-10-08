@@ -1,402 +1,435 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Marioneta de Sangre | Umbra Atra</title>
+  <title>Marioneta de Sangre | Umbra Atra</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-html {
-  scroll-behavior: smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #000;
-  color: #fff;
-  line-height: 1.7;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #000;
+      color: #fff;
+      line-height: 1.7;
+    }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("photo_2026-07-21_09-00-03.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(8px);
-  transform: scale(1.05);
-  opacity: 0.22;
-  z-index: -2;
-}
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("photo_2026-07-21_09-00-03.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(8px);
+      transform: scale(1.05);
+      opacity: 0.22;
+      z-index: -2;
+    }
 
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.72);
-  z-index: -1;
-}
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: -1;
+    }
 
-/* MENÚ */
+    /* MENÚ */
 
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.94);
-  border-bottom: 1px solid #222;
-}
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.94);
+      border-bottom: 1px solid #222;
+    }
 
-.nav-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 18px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-}
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
 
-.logo-menu {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  letter-spacing: 4px;
-  white-space: nowrap;
-}
+    .logo-menu {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 4px;
+      white-space: nowrap;
+    }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
 
-nav ul li a {
-  color: #ddd;
-  text-decoration: none;
-  font-size: 0.82rem;
-  letter-spacing: 1px;
-  transition: 0.3s;
-}
+    nav ul li a {
+      color: #ddd;
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
 
-nav ul li a:hover {
-  color: #d84b4b;
-}
+    nav ul li a:hover {
+      color: #d84b4b;
+    }
 
-/* CONTENIDO */
+    /* CONTENIDO */
 
-main {
-  max-width: 1000px;
-  margin: auto;
-  padding: 80px 25px;
-}
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 80px 25px;
+    }
 
-.album-header {
-  text-align: center;
-  margin-bottom: 70px;
-}
+    .album-header {
+      text-align: center;
+      margin-bottom: 70px;
+    }
 
-.album-status {
-  color: #d84b4b;
-  font-size: 0.85rem;
-  letter-spacing: 4px;
-  margin-bottom: 20px;
-}
+    .album-status {
+      color: #d84b4b;
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
 
-.album-header h1 {
-  font-size: 3.5rem;
-  letter-spacing: 8px;
-  margin: 0 0 15px;
-}
+    .album-header h1 {
+      font-size: 3.5rem;
+      letter-spacing: 8px;
+      margin: 0 0 15px;
+    }
 
-.album-subtitle {
-  color: #aaa;
-  letter-spacing: 3px;
-  font-size: 0.95rem;
-}
+    .album-subtitle {
+      color: #aaa;
+      letter-spacing: 3px;
+      font-size: 0.95rem;
+    }
 
-.content-section {
-  margin-bottom: 65px;
-  padding: 35px;
-  border: 1px solid #222;
-  background: rgba(0, 0, 0, 0.55);
-}
+    /* PORTADA */
 
-.content-section h2 {
-  margin-top: 0;
-  color: #fff;
-  letter-spacing: 4px;
-  font-size: 1.5rem;
-  border-bottom: 1px solid #333;
-  padding-bottom: 15px;
-}
+    .album-cover {
+      text-align: center;
+      margin: 45px auto 70px;
+    }
 
-.content-section p {
-  color: #ccc;
-}
+    .album-cover img {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      display: block;
+      margin: auto;
+      border: 1px solid #333;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75);
+    }
 
-/* LISTA DE CANCIONES */
+    /* SECCIONES */
 
-.track-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+    .content-section {
+      margin-bottom: 65px;
+      padding: 35px;
+      border: 1px solid #222;
+      background: rgba(0, 0, 0, 0.55);
+    }
 
-.track {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 18px 20px;
-  border: 1px solid #252525;
-  background: rgba(10, 10, 10, 0.65);
-  text-decoration: none;
-  color: #fff;
-  transition: 0.3s;
-}
+    .content-section h2 {
+      margin-top: 0;
+      color: #fff;
+      letter-spacing: 4px;
+      font-size: 1.5rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 15px;
+    }
 
-.track:hover {
-  border-color: #b30000;
-  background: rgba(179, 0, 0, 0.10);
-}
+    .content-section p {
+      color: #ccc;
+    }
 
-.track-number {
-  width: 35px;
-  color: #d84b4b;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
+    /* LISTA DE CANCIONES */
 
-.track-name {
-  letter-spacing: 2px;
-  font-size: 0.95rem;
-}
+    .track-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-/* BOTÓN */
+    .track {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 20px;
+      border: 1px solid #252525;
+      background: rgba(10, 10, 10, 0.65);
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s;
+    }
 
-.navigation {
-  text-align: center;
-  margin-top: 60px;
-}
+    .track:hover {
+      border-color: #b30000;
+      background: rgba(179, 0, 0, 0.10);
+    }
 
-.nav-button {
-  display: inline-block;
-  padding: 14px 30px;
-  border: 1px solid #b30000;
-  color: #fff;
-  text-decoration: none;
-  letter-spacing: 2px;
-  transition: 0.3s;
-}
+    .track-number {
+      width: 35px;
+      color: #d84b4b;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
 
-.nav-button:hover {
-  background: #b30000;
-}
+    .track-name {
+      letter-spacing: 2px;
+      font-size: 0.95rem;
+    }
 
-/* FOOTER */
+    /* BOTÓN */
 
-footer {
-  text-align: center;
-  padding: 35px 20px;
-  color: #777;
-  border-top: 1px solid #222;
-  background: rgba(0, 0, 0, 0.45);
-}
+    .navigation {
+      text-align: center;
+      margin-top: 60px;
+    }
 
-/* MÓVIL */
+    .nav-button {
+      display: inline-block;
+      padding: 14px 30px;
+      border: 1px solid #b30000;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
 
-@media (max-width: 800px) {
+    .nav-button:hover {
+      background: #b30000;
+    }
 
-  .nav-container {
-    flex-direction: column;
-  }
+    /* FOOTER */
 
-  nav ul {
-    justify-content: center;
-    gap: 15px;
-  }
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #777;
+      border-top: 1px solid #222;
+      background: rgba(0, 0, 0, 0.45);
+    }
 
-  main {
-    padding: 60px 20px;
-  }
+    /* MÓVIL */
 
-  .album-header h1 {
-    font-size: 2.4rem;
-    letter-spacing: 5px;
-  }
+    @media (max-width: 800px) {
 
-  .content-section {
-    padding: 25px 20px;
-  }
+      .nav-container {
+        flex-direction: column;
+      }
 
-  .track {
-    padding: 16px;
-  }
+      nav ul {
+        justify-content: center;
+        gap: 15px;
+      }
 
-}
-</style>
+      main {
+        padding: 60px 20px;
+      }
+
+      .album-header h1 {
+        font-size: 2.4rem;
+        letter-spacing: 5px;
+      }
+
+      .content-section {
+        padding: 25px 20px;
+      }
+
+      .track {
+        padding: 16px;
+      }
+
+      .album-cover {
+        margin-bottom: 50px;
+      }
+
+    }
+  </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="nav-container">
+  <nav>
+    <div class="nav-container">
 
-    <a href="index.html" class="logo-menu">
-      UMBRA ATRA
-    </a>
+      <a href="index.html" class="logo-menu">
+        UMBRA ATRA
+      </a>
 
-    <ul>
-      <li><a href="index.html">INICIO</a></li>
-      <li><a href="musica.html">MÚSICA</a></li>
-      <li><a href="albumes.html">ÁLBUMES</a></li>
-      <li><a href="significados.html">SIGNIFICADOS</a></li>
-      <li><a href="letras.html">LETRAS</a></li>
-      <li><a href="historia.html">HISTORIA</a></li>
-      <li><a href="descargas.html">DESCARGAS</a></li>
-      <li><a href="contacto.html">CONTACTO</a></li>
-    </ul>
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="musica.html">MÚSICA</a></li>
+        <li><a href="albumes.html">ÁLBUMES</a></li>
+        <li><a href="significados.html">SIGNIFICADOS</a></li>
+        <li><a href="letras.html">LETRAS</a></li>
+        <li><a href="historia.html">HISTORIA</a></li>
+        <li><a href="descargas.html">DESCARGAS</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+      </ul>
 
-  </div>
-</nav>
-
-
-<main>
-
-  <header class="album-header">
-
-    <div class="album-status">
-      SEGUNDO ÁLBUM
     </div>
-
-    <h1>MARIONETA DE SANGRE</h1>
-
-    <div class="album-subtitle">
-      CUENTOS MUERTOS, AMOR ASESINADO
-    </div>
-
-  </header>
+  </nav>
 
 
-  <section class="content-section">
+  <main>
 
-    <h2>EL ÁLBUM</h2>
+    <header class="album-header">
 
-    <p>
-      Marioneta de Sangre es el segundo capítulo del universo de
-      Umbra Atra. Una historia oscura donde los cuentos de hadas
-      dejan de tener finales felices y una antigua marioneta se
-      convierte en el centro de una leyenda de terror, fantasía,
-      pérdida y oscuridad.
-    </p>
+      <div class="album-status">
+        SEGUNDO ÁLBUM
+      </div>
 
-    <p>
-      A través de ocho canciones, la historia avanza desde el
-      nacimiento de la leyenda hasta sus consecuencias finales.
-      Princesas, castillos, promesas rotas y una criatura incapaz
-      de comprender el amor forman parte de este universo.
-    </p>
+      <h1>MARIONETA DE SANGRE</h1>
 
-  </section>
+      <div class="album-subtitle">
+        CUENTOS MUERTOS, AMOR ASESINADO
+      </div>
+
+    </header>
 
 
-  <section class="content-section">
+    <!-- PORTADA DEL ÁLBUM -->
 
-    <h2>LAS CANCIONES</h2>
+    <div class="album-cover">
 
-    <div class="track-list">
-
-      <a href="#" class="track">
-        <span class="track-number">01</span>
-        <span class="track-name">LA MARIONETA DEL BOSQUE</span>
-      </a>
-
-      <a href="#" class="track">
-        <span class="track-number">02</span>
-        <span class="track-name">CUENTOS MUERTOS</span>
-      </a>
-
-      <a href="#" class="track">
-        <span class="track-number">03</span>
-        <span class="track-name">EL CORAZÓN DE MADERA</span>
-      </a>
-
-      <a href="#" class="track">
-        <span class="track-number">04</span>
-        <span class="track-name">LA PROMESA ROTA</span>
-      </a>
-
-      <a href="#" class="track">
-        <span class="track-number">05</span>
-        <span class="track-name">CORRE, PRINCESAS</span>
-      </a>
-
-      <a href="#" class="track">
-        <span class="track-number">06</span>
-        <span class="track-name">LA CORONA VACÍA</span>
-      </a>
-
-      <a href="#" class="track">
-        <span class="track-number">07</span>
-        <span class="track-name">MARIONETA DE SANGRE</span>
-      </a>
-
-      <a href="#" class="track">
-        <span class="track-number">08</span>
-        <span class="track-name">EL ÚLTIMO BESO</span>
-      </a>
+      <img src="Album 2.png"
+           alt="Portada del álbum Marioneta de Sangre">
 
     </div>
 
-  </section>
+
+    <section class="content-section">
+
+      <h2>EL ÁLBUM</h2>
+
+      <p>
+        Marioneta de Sangre es el segundo capítulo del universo de
+        Umbra Atra. Una historia oscura donde los cuentos de hadas
+        dejan de tener finales felices y una antigua marioneta se
+        convierte en el centro de una leyenda de terror, fantasía,
+        pérdida y oscuridad.
+      </p>
+
+      <p>
+        A través de ocho canciones, la historia avanza desde el
+        nacimiento de la leyenda hasta sus consecuencias finales.
+        Princesas, castillos, promesas rotas y una criatura incapaz
+        de comprender el amor forman parte de este universo.
+      </p>
+
+    </section>
 
 
-  <section class="content-section">
+    <section class="content-section">
 
-    <h2>EL UNIVERSO</h2>
+      <h2>LAS CANCIONES</h2>
 
-    <p>
-      La historia comienza en un bosque donde los cuentos de hadas
-      han dejado de ser felices. Una marioneta aparece como una
-      presencia misteriosa y quienes la encuentran nunca vuelven
-      a ser los mismos.
-    </p>
+      <div class="track-list">
 
-    <p>
-      Poco a poco, las princesas desaparecen, las promesas se
-      rompen y los reinos quedan vacíos. La leyenda crece hasta
-      convertirse en una historia de sangre, pérdida y oscuridad.
-    </p>
+        <a href="#" class="track">
+          <span class="track-number">01</span>
+          <span class="track-name">LA MARIONETA DEL BOSQUE</span>
+        </a>
 
-  </section>
+        <a href="#" class="track">
+          <span class="track-number">02</span>
+          <span class="track-name">CUENTOS MUERTOS</span>
+        </a>
+
+        <a href="#" class="track">
+          <span class="track-number">03</span>
+          <span class="track-name">EL CORAZÓN DE MADERA</span>
+        </a>
+
+        <a href="#" class="track">
+          <span class="track-number">04</span>
+          <span class="track-name">LA PROMESA ROTA</span>
+        </a>
+
+        <a href="#" class="track">
+          <span class="track-number">05</span>
+          <span class="track-name">CORRE, PRINCESAS</span>
+        </a>
+
+        <a href="#" class="track">
+          <span class="track-number">06</span>
+          <span class="track-name">LA CORONA VACÍA</span>
+        </a>
+
+        <a href="#" class="track">
+          <span class="track-number">07</span>
+          <span class="track-name">MARIONETA DE SANGRE</span>
+        </a>
+
+        <a href="#" class="track">
+          <span class="track-number">08</span>
+          <span class="track-name">EL ÚLTIMO BESO</span>
+        </a>
+
+      </div>
+
+    </section>
 
 
-  <div class="navigation">
+    <section class="content-section">
 
-    <a href="albumes.html" class="nav-button">
-      ← VOLVER A ÁLBUMES
-    </a>
+      <h2>EL UNIVERSO</h2>
 
-  </div>
+      <p>
+        La historia comienza en un bosque donde los cuentos de hadas
+        han dejado de ser felices. Una marioneta aparece como una
+        presencia misteriosa y quienes la encuentran nunca vuelven
+        a ser los mismos.
+      </p>
 
-</main>
+      <p>
+        Poco a poco, las princesas desaparecen, las promesas se
+        rompen y los reinos quedan vacíos. La leyenda crece hasta
+        convertirse en una historia de sangre, pérdida y oscuridad.
+      </p>
+
+    </section>
 
 
-<footer>
-  © 2026 Umbra Atra — Sitio Oficial
-</footer>
+    <div class="navigation">
+
+      <a href="albumes.html" class="nav-button">
+        ← VOLVER A ÁLBUMES
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+    © 2026 Umbra Atra — Sitio Oficial
+  </footer>
 
 </body>
 </html>
