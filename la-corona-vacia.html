@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Corona Vacía | Umbra Atra</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+  color: #fff;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("photo_2026-07-21_09-00-03.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px);
+  transform: scale(1.05);
+  opacity: 0.22;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  z-index: -1;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.92);
+  border-bottom: 1px solid #222;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.logo-menu {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 4px;
+  font-size: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #b30000;
+}
+
+main {
+  max-width: 950px;
+  margin: auto;
+  padding: 80px 30px;
+}
+
+.song-header {
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+.song-number {
+  color: #b30000;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.song-header h1 {
+  font-size: 4rem;
+  letter-spacing: 7px;
+  margin-bottom: 18px;
+}
+
+.album-name {
+  color: #b8b8b8;
+  letter-spacing: 3px;
+  font-size: 0.95rem;
+}
+
+.content-section {
+  border: 1px solid #333;
+  background: rgba(15, 15, 15, 0.78);
+  padding: 40px;
+  margin-bottom: 30px;
+}
+
+.content-section h2 {
+  color: #b30000;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+}
+
+.content-section p {
+  color: #d0d0d0;
+  line-height: 1.9;
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+}
+
+.listen-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.listen-button {
+  display: block;
+  padding: 16px 18px;
+  border: 1px solid #b30000;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.listen-button:hover {
+  background: #b30000;
+}
+
+.lyrics {
+  white-space: pre-line;
+  color: #d0d0d0;
+  line-height: 2;
+  font-size: 1.05rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.nav-button {
+  display: inline-block;
+  padding: 15px 25px;
+  border: 1px solid #b30000;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.nav-button:hover {
+  background: #b30000;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid #222;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 800px) {
+  .nav-container {
+    flex-direction: column;
+  }
+
+  nav ul {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  main {
+    padding: 60px 20px;
+  }
+
+  .song-header h1 {
+    font-size: 2.6rem;
+    letter-spacing: 4px;
+  }
+
+  .content-section {
+    padding: 25px;
+  }
+
+  .listen-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .navigation {
+    flex-direction: column;
+  }
+
+  .nav-button {
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo-menu">UMBRA ATRA</a>
+
+    <ul>
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="musica.html">MÚSICA</a></li>
+      <li><a href="albumes.html">ÁLBUMES</a></li>
+      <li><a href="significados.html">SIGNIFICADOS</a></li>
+      <li><a href="letras.html">LETRAS</a></li>
+      <li><a href="historia.html">HISTORIA</a></li>
+      <li><a href="descargas.html">DESCARGAS</a></li>
+      <li><a href="contacto.html">CONTACTO</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <header class="song-header">
+    <div class="song-number">CANCIÓN 06</div>
+
+    <h1>LA CORONA VACÍA</h1>
+
+    <div class="album-name">
+      ÁLBUM: MARIONETA DE SANGRE
+    </div>
+  </header>
+
+  <section class="content-section">
+
+    <h2>LA CANCIÓN</h2>
+
+    <p>
+      “La Corona Vacía” representa la caída definitiva del reino.
+      Los antiguos salones han quedado en silencio, las puertas ya no
+      esperan a nadie y las coronas descansan entre las ruinas.
+    </p>
+
+    <p>
+      Ya no existe una reina que pueda regresar ni una historia capaz
+      de devolver la vida al castillo. Todo aquello que alguna vez
+      representó poder, esperanza y futuro ha quedado vacío.
+    </p>
+
+    <p>
+      La canción muestra las consecuencias de la tragedia: un reino
+      destruido, sin heredera, sin esperanza y condenado a recordar
+      aquello que perdió.
+    </p>
+
+    <div class="listen-buttons">
+
+      <a href="https://youtu.be/_Rfi7TNtVy8?si=zuQYMSG0SqN_t2Ju"
+         class="listen-button"
+         target="_blank">
+         YOUTUBE
+      </a>
+
+      <a href="https://open.spotify.com/intl-es/track/0tECdmUdmm2jQPsE064bpg?si=aef5605459be45d6"
+         class="listen-button"
+         target="_blank">
+         SPOTIFY
+      </a>
+
+      <a href="https://music.apple.com/us/song/la-corona-vac%C3%ADa/6803383736"
+         class="listen-button"
+         target="_blank">
+         APPLE MUSIC
+      </a>
+
+    </div>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>SIGNIFICADO</h2>
+
+    <p>
+      <strong>La derrota del reino.</strong>
+    </p>
+
+    <p>
+      El reino ha caído. Las princesas han desaparecido, los salones
+      quedaron vacíos y ya no existe una reina que pueda ocupar el
+      trono.
+    </p>
+
+    <p>
+      La corona representa todo aquello que se perdió: el poder,
+      la esperanza, la continuidad y el futuro. Lo que queda es un
+      castillo vacío que conserva únicamente el eco de quienes alguna
+      vez lo habitaron.
+    </p>
+
+    <p>
+      Es el momento en que la tragedia alcanza sus consecuencias más
+      visibles y el reino queda completamente derrotado.
+    </p>
+
+  </section>
+
+  <section class="content-section">
+
+    <h2>LETRA</h2>
+
+    <div class="lyrics">
+Ya no despiertan los viejos salones
+Duermen las piedras, callaron las voces
+Bailan las sombras sobre el cristal
+Como un recuerdo que no volverá
+
+Mueren las llamas del candelabro
+Llora el silencio bajo el retrato
+El gran salón dejó de esperar
+Nadie las vino a salvar
+
+¿Quién llevará
+La luz del reino?
+¿Quién romperá
+Este silencio?
+
+La corona quedó vacía
+Sin una reina que vuelva a brillar
+El trono guarda la última herida
+Que nadie podrá sanar
+
+La corona quedó vacía
+Ya no hay un nombre para coronar
+Solo el eco de antiguas promesas
+Que el viento no traerá
+
+Los viejos muros dejaron de hablar
+Los estandartes dejaron de ondear
+Cada ventana perdió su color
+Como un jardín que se secó
+
+Mil escalones sin un caminar
+Mil habitaciones sin despertar
+Solo la Luna volvió a cruzar, hacia aquel lugar
+
+Campanas lloran sobre la ciudad
+Nadie responde al despertar
+Las viejas puertas ya no abrirán
+Él castillo nunca habitado estará
+
+Sin una reina, no hay un hogar
+Sin una historia que recordar
+Sin una esperanza, que abrazar
+Solo un reino, que aprendió, a esperar
+
+La corona quedó vacía
+Nadie regresó para reinar
+Los sueños duermen bajo las ruinas
+Sin volver a despertar
+
+La corona quedó vacía
+Como un invierno sobre el altar
+Y entre las sombras del viejo castillo
+Aún se escucha el reino llorar
+    </div>
+
+  </section>
+
+  <div class="navigation">
+
+    <a href="albumes.html" class="nav-button">
+      ← VOLVER A ÁLBUMES
+    </a>
+
+    <a href="marioneta-de-sangre-cancion.html" class="nav-button">
+      SIGUIENTE CANCIÓN →
+    </a>
+
+  </div>
+
+</main>
+
+<footer>
+  © 2026 Umbra Atra — Sitio Oficial
+</footer>
+
+</body>
+</html>
