@@ -4,10 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Umbra Atra | Música</title>
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { background: #090909; color: #ffffff; font-family: Arial, Helvetica, sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #090909;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
     body::before {
       content: "";
@@ -76,7 +89,9 @@
       transition: 0.3s;
     }
 
-    nav ul li a:hover { color: #b30000; }
+    nav ul li a:hover {
+      color: #b30000;
+    }
 
     main {
       max-width: 1200px;
@@ -103,7 +118,9 @@
       font-size: 1.05rem;
     }
 
-    .album-section { margin-top: 70px; }
+    .album-section {
+      margin-top: 70px;
+    }
 
     .album-section h2 {
       text-align: center;
@@ -131,6 +148,16 @@
       color: #c9c9c9;
       line-height: 1.8;
       margin-bottom: 25px;
+    }
+
+    .album-cover {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      display: block;
+      margin: 25px auto 35px;
+      border: 1px solid #333;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.65);
     }
 
     .tracks {
@@ -169,6 +196,25 @@
       letter-spacing: 1px;
     }
 
+    .album-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 25px;
+      border: 1px solid #b30000;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    .album-link:hover {
+      background: #b30000;
+    }
+
+    .button-container {
+      text-align: center;
+    }
+
     .back-button {
       display: inline-block;
       margin-top: 50px;
@@ -180,8 +226,9 @@
       transition: 0.3s;
     }
 
-    .back-button:hover { background: #b30000; }
-    .button-container { text-align: center; }
+    .back-button:hover {
+      background: #b30000;
+    }
 
     footer {
       text-align: center;
@@ -192,11 +239,28 @@
     }
 
     @media (max-width: 800px) {
-      .nav-container { flex-direction: column; }
-      nav ul { justify-content: center; gap: 15px; }
-      .page-title h1 { font-size: 2.5rem; letter-spacing: 5px; }
-      .tracks { grid-template-columns: 1fr; }
-      .album-card { padding: 25px; }
+
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .page-title h1 {
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+      }
+
+      .tracks {
+        grid-template-columns: 1fr;
+      }
+
+      .album-card {
+        padding: 25px;
+      }
     }
   </style>
 </head>
@@ -205,7 +269,10 @@
 
   <nav>
     <div class="nav-container">
-      <a href="index.html" class="logo-menu">UMBRA ATRA</a>
+
+      <a href="index.html" class="logo-menu">
+        UMBRA ATRA
+      </a>
 
       <ul>
         <li><a href="index.html">INICIO</a></li>
@@ -217,25 +284,41 @@
         <li><a href="descargas.html">DESCARGAS</a></li>
         <li><a href="contacto.html">CONTACTO</a></li>
       </ul>
+
     </div>
   </nav>
+
 
   <main>
 
     <section class="page-title">
+
       <h1>MÚSICA</h1>
+
       <p>
         Explora la música de Umbra Atra. Cada canción forma parte
         de un universo de historias, emociones, oscuridad y música
         sinfónica.
       </p>
+
     </section>
 
+
+    <!-- ========================= -->
+    <!-- ÁLBUM 01 -->
+    <!-- ========================= -->
+
     <section class="album-section">
+
       <h2>DÉJAME CAER</h2>
 
       <div class="album-card">
-        <img src="PORTADA.jpg" alt="Portada del álbum Déjame Caer" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 25px auto;">
+
+        <img
+          src="PORTADA.jpg"
+          alt="Portada del álbum Déjame Caer"
+          class="album-cover">
+
         <h3>Déjame Caer</h3>
 
         <p>
@@ -282,19 +365,107 @@
           </a>
 
           <a href="umbra-atra.html" class="track">
-  <div class="track-number">08</div>
-  <div class="track-title">UMBRA ATRA</div>
-</a>
+            <div class="track-number">08</div>
+            <div class="track-title">UMBRA ATRA</div>
+          </a>
 
         </div>
+
       </div>
+
     </section>
 
+
+    <!-- ========================= -->
+    <!-- ÁLBUM 02 -->
+    <!-- ========================= -->
+
+    <section class="album-section">
+
+      <h2>MARIONETA DE SANGRE</h2>
+
+      <div class="album-card">
+
+        <img
+          src="Album 2.png"
+          alt="Portada del álbum Marioneta de Sangre"
+          class="album-cover">
+
+        <h3>Marioneta de Sangre</h3>
+
+        <p>
+          El segundo capítulo del universo de Umbra Atra.
+          Una historia de cuentos rotos, princesas desaparecidas,
+          promesas destruidas y una marioneta nacida de la oscuridad.
+        </p>
+
+        <div class="tracks">
+
+          <a href="la-marioneta-del-bosque.html" class="track">
+            <div class="track-number">01</div>
+            <div class="track-title">LA MARIONETA DEL BOSQUE</div>
+          </a>
+
+          <a href="cuentos-muertos.html" class="track">
+            <div class="track-number">02</div>
+            <div class="track-title">CUENTOS MUERTOS</div>
+          </a>
+
+          <a href="el-corazon-de-madera.html" class="track">
+            <div class="track-number">03</div>
+            <div class="track-title">EL CORAZÓN DE MADERA</div>
+          </a>
+
+          <a href="la-promesa-rota.html" class="track">
+            <div class="track-number">04</div>
+            <div class="track-title">LA PROMESA ROTA</div>
+          </a>
+
+          <a href="corre-princesas.html" class="track">
+            <div class="track-number">05</div>
+            <div class="track-title">CORRE, PRINCESAS</div>
+          </a>
+
+          <a href="la-corona-vacia.html" class="track">
+            <div class="track-number">06</div>
+            <div class="track-title">LA CORONA VACÍA</div>
+          </a>
+
+          <a href="marioneta-de-sangre-cancion.html" class="track">
+            <div class="track-number">07</div>
+            <div class="track-title">MARIONETA DE SANGRE</div>
+          </a>
+
+          <a href="el-ultimo-beso.html" class="track">
+            <div class="track-number">08</div>
+            <div class="track-title">EL ÚLTIMO BESO</div>
+          </a>
+
+        </div>
+
+        <a
+          href="marioneta-de-sangre.html"
+          class="album-link">
+          VER ÁLBUM COMPLETO →
+        </a>
+
+      </div>
+
+    </section>
+
+
     <div class="button-container">
-      <a href="index.html" class="back-button">VOLVER AL INICIO</a>
+
+      <a
+        href="index.html"
+        class="back-button">
+        VOLVER AL INICIO
+      </a>
+
     </div>
 
   </main>
+
 
   <footer>
     © 2026 Umbra Atra — Sitio Oficial
